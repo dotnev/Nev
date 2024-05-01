@@ -62,5 +62,5 @@ i32 intger = 256
 dog := animal('bopy')
 ```
 > [!WARNING]  
-> if u turned FormalChecks on u wont able to declare data types with second way but if u want
-> `float := 250.52f64
+> if u turned FormalChecks from settings on u wont be able to declare data types with second way but if not
+> `float := 250.52f64`
