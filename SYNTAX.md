@@ -29,11 +29,14 @@ let's start with default project settings which is in `program.json`
 We'll know what is every property equal but every thing we'll know in it's time
 
 ## Variables
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+Numeric types
+| Signed | Unsigned| Length |
+| ------ | ------- | ------ |
+| `i8`   | `u8`  | 1-byte |
+| `i16`  | `u16`  | 2-byte |
+| `i32`  | `u32`  | 4-byte |
+| `i64`  | `u64`  | 8-byte |
+| `i128`  | `u128`  | 16-byte |
 
 
 the basic data types is
