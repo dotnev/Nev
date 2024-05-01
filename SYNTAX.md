@@ -37,6 +37,8 @@ Numeric types
 | `i32`  | `u32`    | `f32`  | `complex32`  | 4-byte  |
 | `i64`  | `u64`    | `f64`  | `complex64`  | 8-byte  |
 | `i128` | `u128`   | `f128` | `complex128` | 16-byte |
+
+
 Other Types is
 | Type   | Length |
 | ------ | ------ |
