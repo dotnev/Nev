@@ -28,7 +28,9 @@ let's start with default project settings which is in `program.json`
 ```
 We'll know what is every property equal but every thing we'll know in it's time
 
-## Variables
+
+<details>
+<summary>Variables</summary>
 Numeric types
 | Signed | Unsigned | Float  | Complex      | Length  |
 | ------ | -------- | ------ | ------------ | ------- |
@@ -64,3 +66,4 @@ dog := animal('bopy')
 > [!WARNING]  
 > if u turned FormalChecks from settings on u wont be able to declare data types with second way but if not
 > `float := 250.52f64`
+</details>
