@@ -30,7 +30,7 @@ We'll know what is every property equal but every thing we'll know in it's time
 
 ## Variables
 Numeric types
-| Signed | Unsigned| Length |
+| Signed | Unsigned | Length |
 | ------ | ------- | ------ |
 | `i8`   | `u8`  | 1-byte |
 | `i16`  | `u16`  | 2-byte |
