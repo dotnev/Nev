@@ -31,6 +31,7 @@ We'll know what is every property equal but every thing we'll know in it's time
 
 <details>
 <summary>Variables</summary>
+
 > Numeric types:
 > | Signed | Unsigned | Float  | Complex      | Length  |
 > | ------ | -------- | ------ | ------------ | ------- |
@@ -66,4 +67,5 @@ We'll know what is every property equal but every thing we'll know in it's time
 > > [!WARNING]  
 > > if u turned FormalChecks from settings on u wont be able to declare data types with second way but if not
 > > `float := 250.52f64`
+
 </details>
