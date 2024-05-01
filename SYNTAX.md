@@ -47,16 +47,14 @@ Other Types is
 | `bool` | 1-bit  |
 
 
-
-the basic data types is
+Then to declare a type there is a 2 ways
+first(more formal for declare data types):
 ```vs
-i8 i = 0 // there is also (i16, i32, i64, i128)
-u8 u = 0 // there is also (u16, u32, u64, u128)
-f16 f = 0 // there is also (f32, f64, f128)
-//we will add also complex64 complex128 and number
-str s = 'hello world'
-char c = 'c'
-bool b = true
+Type name = value
+```
+second(more formal for declare classes):
+```vs
+name := value
 ```
 
 
