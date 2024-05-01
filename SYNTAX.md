@@ -30,13 +30,13 @@ We'll know what is every property equal but every thing we'll know in it's time
 
 ## Variables
 Numeric types
-| Signed | Unsigned | Length |
-| ------ | ------- | ------ |
-| `i8`   | `u8`  | 1-byte |
-| `i16`  | `u16`  | 2-byte |
-| `i32`  | `u32`  | 4-byte |
-| `i64`  | `u64`  | 8-byte |
-| `i128`  | `u128`  | 16-byte |
+| Signed | Unsigned | Float  | Complex      | Length  |
+| ------ | -------- | ------ | ------------ | ------- |
+| `i8`   | `u8`     | ...... | ............ | 1-byte  |
+| `i16`  | `u16`    | `f16`  | ............ | 2-byte  |
+| `i32`  | `u32`    | `f32`  | `complex32`  | 4-byte  |
+| `i64`  | `u64`    | `f64`  | `complex64`  | 8-byte  |
+| `i128` | `u128`   | `f128` | `complex128` | 16-byte |
 
 
 the basic data types is
