@@ -56,23 +56,11 @@ second(more formal for declare classes):
 ```vs
 name := value
 ```
-
-
-
-
-i := 5
-f := 5.5f
-int64 := 5i64
-float64 := 5.5f64
-u := 5u
-uint64 := 5u64
-
-s := "hello world"
-c := 'c'
-b := true
-
-
-u8[] a = {1, 2, 3, 4, 5, 6, 7}
-a := u8[]{1, 2, 3, 4, 5, 6, 7}
-a := {1, 2, 3, 4, 5, 6, 7}
+Examples:
+```vs
+i32 intger = 256
+dog := animal('bopy')
 ```
+> [!WARNING]  
+> if u turned FormalChecks on u wont able to declare data types with second way but if u want
+> `float := 250.52f64
