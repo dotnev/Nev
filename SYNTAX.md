@@ -1,30 +1,26 @@
 # Syntax of ViteSharp programming language
 
-let's start with default project settings which is in `program.json`
-```json
-{
-    "Name": "test",
-    "Type": "App",
-    "Backend": "TCC",
-    "OS": "windows",
-    "OptimizationPreference": "Speed",
-    "OutJournal": "RPF",
-    "ModulesHiring": "ByFolder",
-    "GlobalOpen": [
-       "Pixel",
-       "Http",
-       "Pigeon"
-    ],
-    "CompileLibraries": [
-       "Liberate",
-       "SpaghettiMaker",
-       "MathOptimizer"
-    ],
-    "Syntax": {
-       "XMLDeclaration": true,
-       "SyntaxChecks": "FormalChecks"
-    }
-}
+let's start with default project settings which is in `program.yaml`
+```yaml
+Name: test
+Type: App
+Backend: TCC
+OS: windows
+OptimizationPreference: Speed
+OutJournal: RPF
+ModulesHiring: ByFolder
+GlobalOpen:
+ - Pixel
+ - Http
+ - Pigeon
+CompileLibraries:
+ - Liberate
+ - SpaghettiMaker
+ - MathOptimizer
+Syntax:
+ XMLDeclaration: true
+ SyntaxChecks: FormalChecks
+
 ```
 We'll know what is every property equal but every thing we'll know in it's time
 
