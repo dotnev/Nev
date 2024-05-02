@@ -4,7 +4,9 @@ func main() {
     type name = val
     let name = val
     // to declare an immutable
-    const type name = val
+    const str name = val // size auto string 
+    const int name = val // size auto integer 
+    const bool name = val // size auto boolean 
     const name = val
 
     /* data types are
