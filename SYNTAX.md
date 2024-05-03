@@ -32,16 +32,21 @@ let's start by how to declare a type
 there is 2 ways
 first:
 ```vs
-datatype name = value
-const datatype name = value
+datatype name = value // mutable
+const datatype name = value // immutable
 ```
 second:
 ```vs
-let name = value
-const name = value
+let name = value // mutable
+const name = value // immutable
+```
+u can make mutable variables nullable by add ? after datatype or let in second declaration way:
+```vs
+let? name = "youssefully";
+u8? age = 23
 ```
 
-ViteSharp support some basic types of variables
+ViteSharp support some basic types of data types
 
 let's start with numeric types
 | Signed | Unsigned | Float  | Complex      | Length  |
@@ -51,7 +56,7 @@ let's start with numeric types
 | `i32`  | `u32`    | `f32`  | `complex32`  | 4-byte  |
 | `i64`  | `u64`    | `f64`  | `complex64`  | 8-byte  |
 
-there also numeric type is `num` that is easu to use and when u declare number with second declaretion why u declare a `num`
+there also numeric type is `num` that is easy to use and when u declare number with second declaretion way u declare a `num`
 
 Other Types is
 | Type   | Length |
@@ -65,9 +70,8 @@ Examples:
 i32 intger = 256
 let dog = animal('bopy')
 ```
- > [!WARNING]  
- > if u turned FormalChecks from settings on u wont be able to declare data types with second way but if not
- > `let float = 250.52f64`
-
+> [!WARNING]  
+> if u turned FormalChecks from settings on u wont be able to declare datatypes with second way(only classes) but if not
+> `let float = 250.52f64`
 
 </details>
