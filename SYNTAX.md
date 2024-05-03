@@ -1,4 +1,4 @@
-# Syntax of ViteSharp programming language
+# Syntax of ViteSharp programming language 
 
 let's start with default project settings which is in `program.yaml`
 ```yaml
@@ -20,11 +20,10 @@ CompileLibraries:
 Syntax:
  XMLDeclaration: true
  SyntaxChecks: FormalChecks
-
 ```
 We'll know what is every property equal but every thing we'll know in it's time
 
-
+at first i should say the Extension of ViteSharp lang is vs/🚀
 <details>
 <summary>Variables</summary>
 
