@@ -72,4 +72,10 @@ let dog = animal('bopy')
 > [!WARNING]  
 > if u turned FormalChecks from settings on u wont be able to declare mutable with second way(it recommended for classes and immutable variables) but if not `let float = 250.52f64` because code should look more clear
 
+<details>
+<summary>str</summary>
+
+## str and its functions
+
+</details>
 </details>
