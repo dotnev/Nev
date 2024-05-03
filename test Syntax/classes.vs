@@ -44,12 +44,26 @@ class Student : Person {
     u8 grade
     init(str _name, str _year) => name, year = _name, _year
     override func introduceSelf() {
-        cmd.print("Hi! \n I'm +{name} in +{year} class. \n i want to be in a good place a day in the feature to help others. \n")
+        cmd.print("Hi! \n I'm +{name} in +{year} and i get +{grade} in my last exam class. \n
+        i want to be in a good place a day in the feature to help others. \n")
     }
 }
 
 func main() {
-    Person dad = Person("Alex")
+    Person dad = Person("alex")
     let student = Student("tom", 3)
-    
+    let prof = Professor("jake", {"english", "chemistry"})
+    prof.setGrade(student, 91)
+    dad.talk()
+    student.talk()
+    prof.talk()
+    /* output:
+    Hi!
+    I'm just a normal person called alex.
+    Hi!
+    I'm tom in 3 and i get 91 in my last exam class.
+    i want to be in a good place a day in the feature to help others.
+    Hi everyone!
+    I'm jake just tries to explain my subject to my student i hobe to help everyone.
+    */
 }
