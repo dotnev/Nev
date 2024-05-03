@@ -8,7 +8,14 @@ class cat : animal {
 }
 
 func main() {
-    animal[] animals = animal[]
+    let animals = animal[]
     let dog = animal()
     dog.talk()
+    let cute = cat()
+    cute.talk()
+    /*
+    output:
+    ...
+    hi miao im cat miao miao!!!
+    */
 }

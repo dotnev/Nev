@@ -3,15 +3,15 @@ func main() {
     // to declare a mutable variable
     type name = val
     let name = val
-    // to declare an immutable
-    const str name = val // size auto string 
-    const int name = val // size auto integer 
-    const bool name = val // size auto boolean 
-    const name = val
+    // to declare an immutable const name = val
+    const name = "abdelrahman" // static size string
+    const age = 255 // will save in smallest numeric data type possible to its value
+    const isNone = true // 1-bit
+
 
     /* data types are
-    num: normal number
-    str: text
+    num: size auto number
+    str: size auto string
     char: character
     bool: boolean
     i8 i16 i32 i64: integer number
