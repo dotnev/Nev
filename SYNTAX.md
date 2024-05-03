@@ -27,6 +27,8 @@ at first i should say the Extension of ViteSharp lang is vs/🚀
 <details>
 <summary>Variables</summary>
 
+## Variables and Data types
+
 let's start by how to declare a type
 there is 2 ways
 first:
