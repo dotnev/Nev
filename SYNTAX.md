@@ -30,13 +30,15 @@ We'll know what is every property equal but every thing we'll know in it's time
 
 let's start by how to declare a type
 there is 2 ways
-first(more formal for declare data types):
+first:
 ```vs
-Type name = value
+datatype name = value
+const datatype name = value
 ```
-second(more formal for declare classes):
+second:
 ```vs
-name := value
+let name = value
+const name = value
 ```
 
 ViteSharp support some basic types of variables
@@ -48,7 +50,6 @@ let's start with numeric types
 | `i16`  | `u16`    | `f16`  | ............ | 2-byte  |
 | `i32`  | `u32`    | `f32`  | `complex32`  | 4-byte  |
 | `i64`  | `u64`    | `f64`  | `complex64`  | 8-byte  |
-| `i128` | `u128`   | `f128` | `complex128` | 16-byte |
 
 there also numeric type is `num` that is easu to use and when u declare number with second declaretion why u declare a `num`
 
@@ -62,10 +63,11 @@ Other Types is
 Examples:
 ```vs
 i32 intger = 256
-dog := animal('bopy')
+let dog = animal('bopy')
 ```
-> [!WARNING]  
-> if u turned FormalChecks from settings on u wont be able to declare data types with second way but if not
-> `float := 250.52f64`
+ > [!WARNING]  
+ > if u turned FormalChecks from settings on u wont be able to declare data types with second way but if not
+ > `let float = 250.52f64`
+
 
 </details>

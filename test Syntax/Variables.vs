@@ -1,9 +1,13 @@
 func main() {
     
     // to declare a mutable variable
-    type name = val
+    dataType name = val
     let name = val
-    // to declare an immutable const name = val
+    // for example
+    num index = 14235
+    let title = "Hello, world!"
+
+    // to declare an immutable(u also able to write type after const keyword)
     const name = "abdelrahman" // static size string
     const age = 255 // will save in smallest numeric data type possible to its value
     const isNone = true // 1-bit
