@@ -18,3 +18,11 @@
 - Easy to use c libraries(as built-in V#) and to build it
 - Flexible memory management(GC, arena allocation, Ownership, manual memory management)
 - XMLdeclaration support(like xaml in .net but easier to enable for libraries)
+
+
+
+## Thanks to our contributors
+
+<a href="https://github.com/Ameeer1/ViteSharp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Ameeer1/ViteSharp" />
+</a>
