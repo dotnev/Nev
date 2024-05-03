@@ -27,7 +27,7 @@ at first i should say the Extension of ViteSharp lang is vs/🚀
 <details>
 <summary>Variables</summary>
 
-## Variables and Data types
+### Variables and Data types
 
 let's start by how to declare a type
 there is 2 ways
@@ -77,7 +77,7 @@ let dog = animal('bopy')
 <details>
 <summary>str</summary>
 
-## str and its functions
+### str and its functions
 
 </details>
 </details>
