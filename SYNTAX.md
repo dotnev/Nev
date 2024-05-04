@@ -79,5 +79,6 @@ let dog = animal('bopy')
 
 ### str and its functions
 
+
 </details>
 </details>
