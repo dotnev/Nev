@@ -5,7 +5,7 @@ class animal {
 }
 class cat : animal {
     init() => sound = "miao"
-    override func talk() => cmd.print("hi {sound!} im cat {sound!} {sound!}!!!")
+    override fun talk() => cmd.print("hi {sound!} im cat {sound!} {sound!}!!!")
 }
 
 fun main() {
@@ -32,10 +32,10 @@ class Person {
 class Professor : Person {
     str[] teaches = new[]
     init(name, teaches)
-    override func introduceSelf() {
+    override fun introduceSelf() {
         cmd.print("Hi everyone! \n I'm +{name} just tries to explain my subject to my student i hobe to help everyone. \n")
     }
-    func setGrade(ref Student _student, u8 _grade) {
+    fun setGrade(ref Student _student, u8 _grade) {
         _student.grade = _grade
     }
 }
@@ -43,7 +43,7 @@ class Student : Person {
     u8 year
     u8 grade
     init(name, year)
-    override func introduceSelf() {
+    override fun introduceSelf() {
         cmd.print("Hi! \n I'm +{name} in +{year} and i get +{grade} in my last exam class. \n
         i want to be in a good place a day in the feature to help others. \n")
     }
