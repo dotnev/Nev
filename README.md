@@ -16,6 +16,7 @@
 - Generate small executable files
 - FormalChecks feature That should be used in any company or team to make code look more formally
 - Compile-time support
+- Human-readable C/JS backends
 - Easy to use c libraries(as built-in nev) and to build it
 - Flexible memory management(GC, arena allocation, Ownership, manual memory management)
 - XMLdeclaration support(like xaml in .net but easier to enable for libraries)
