@@ -2,10 +2,10 @@ func main() {
     
     // to declare a mutable variable
     dataType name = val
-    let name = val
+    var name = val
     // for example
     num index = 14235
-    let title = "Hello, world!"
+    var title = "Hello, world!"
 
     // to declare an immutable(u also able to write type after const keyword)
     const name = "abdelrahman" // static size string
@@ -23,7 +23,7 @@ func main() {
     f32 f64: floating point number*/
 
     // to declare nullable variable u should use ? after type
-    let? name = "youssefully";
+    var? name = "youssefully";
     u8? age = 23
 
 }

@@ -38,12 +38,12 @@ const datatype name = value // immutable
 ```
 second:
 ```nev
-let name = value // mutable
+var name = value // mutable
 const name = value // immutable
 ```
-u can make mutable variables nullable by add ? after datatype or let in second declaration way:
+u can make mutable variables nullable by add ? after datatype or var in second declaration way:
 ```nev
-let? name = "youssefully";
+var? name = "youssefully";
 u8? age = 23
 ```
 
@@ -69,10 +69,10 @@ Other Types is
 Examples:
 ```nev
 i32 intger = 256
-let dog = animal('bopy')
+var dog = animal('bopy')
 ```
 > [!WARNING]  
-> if u turned FormalChecks from settings on u wont be able to declare mutable with second way(it recommended for classes and immutable variables) but if not `let float = 250.52f64` because code should look more clear
+> if u turned FormalChecks from settings on u wont be able to declare mutable with second way(it recommended for classes and immutable variables) but if not `var float = 250.52f64` because code should look more clear
 
 <details>
 <summary>str</summary>

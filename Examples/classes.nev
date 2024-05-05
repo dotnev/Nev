@@ -9,10 +9,10 @@ class cat : animal {
 }
 
 func main() {
-    let animals = animal[]
-    let dog = animal()
+    var animals = animal[]
+    var dog = animal()
     dog.talk()
-    let cute = cat()
+    var cute = cat()
     cute.talk()
     /*
     output:
@@ -51,8 +51,8 @@ class Student : Person {
 
 func main() {
     Person dad = Person("alex")
-    let student = Student("tom", 3)
-    let prof = Professor("jake", {"english", "chemistry"})
+    var student = Student("tom", 3)
+    var prof = Professor("jake", {"english", "chemistry"})
     prof.setGrade(student, 91)
     dad.talk()
     student.talk()
