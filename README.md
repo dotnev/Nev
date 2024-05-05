@@ -12,6 +12,7 @@
 - Full OOP support
 - Safe as rust
 - Hight performance on par with C
+- Null Safety
 - Generate small executable files
 - FormalChecks feature That should be used in any company or team to make code look more formally
 - Compile-time support
