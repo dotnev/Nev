@@ -2,7 +2,7 @@
 <p>
     <a target="_blank"><img width="50%" src="https://github.com/Ameeer1/ViteSharp/blob/main/Images/Logo.svg"13 alt="ViteSharp logo"></a>
 </p>
-<h1>ViteSharp programming language</h1>
+<h1>Nev programming language</h1>
 </div>
 
 
@@ -15,7 +15,7 @@
 - Generate small executable files
 - FormalChecks feature That should be used in any company or team to make code look more formally
 - Compile-time support
-- Easy to use c libraries(as built-in V#) and to build it
+- Easy to use c libraries(as built-in nev) and to build it
 - Flexible memory management(GC, arena allocation, Ownership, manual memory management)
 - XMLdeclaration support(like xaml in .net but easier to enable for libraries)
 

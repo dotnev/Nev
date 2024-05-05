@@ -23,7 +23,7 @@ Syntax:
 ```
 We'll know what is every property equal but every thing we'll know in it's time
 
-at first i should say the Extension of ViteSharp lang is vs/🚀
+at first i should say the Extension of nevlang is nev/nv.
 <details>
 <summary>Variables</summary>
 
@@ -32,17 +32,17 @@ at first i should say the Extension of ViteSharp lang is vs/🚀
 let's start by how to declare a type
 there is 2 ways
 first:
-```vs
+```nev
 datatype name = value // mutable
 const datatype name = value // immutable
 ```
 second:
-```vs
+```nev
 let name = value // mutable
 const name = value // immutable
 ```
 u can make mutable variables nullable by add ? after datatype or let in second declaration way:
-```vs
+```nev
 let? name = "youssefully";
 u8? age = 23
 ```
@@ -67,7 +67,7 @@ Other Types is
 | `bool` | 1-bit  |
 
 Examples:
-```vs
+```nev
 i32 intger = 256
 let dog = animal('bopy')
 ```
