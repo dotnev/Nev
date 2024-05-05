@@ -1,4 +1,4 @@
-func main() {
+fun main() {
     
     // to declare a mutable variable
     dataType name = val

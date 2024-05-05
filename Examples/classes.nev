@@ -1,14 +1,14 @@
 // first example
 class animal {
     str? sound = null
-    func talk() => cmd.print("...")
+    fun talk() => cmd.print("...")
 }
 class cat : animal {
     init() => sound = "miao"
     override func talk() => cmd.print("hi {sound!} im cat {sound!} {sound!}!!!")
 }
 
-func main() {
+fun main() {
     var animals = animal[]
     var dog = animal()
     dog.talk()
@@ -25,7 +25,7 @@ func main() {
 class Person {
     str name
     init(str _name) => name = _name
-    func introduceSelf() {
+    fun introduceSelf() {
         cmd.print("Hi! \n I'm just a normal person called +{name}.")
     }
 }
@@ -49,7 +49,7 @@ class Student : Person {
     }
 }
 
-func main() {
+fun main() {
     Person dad = Person("alex")
     var student = Student("tom", 3)
     var prof = Professor("jake", {"english", "chemistry"})
