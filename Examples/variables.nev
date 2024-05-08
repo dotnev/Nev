@@ -1,29 +1,32 @@
-fun main() {
+fun main {
     
     // to declare a mutable variable
-    dataType name = val
-    var name = val
+    var name: dataType = value
+    var name = value
     // for example
-    num index = 14235
+    var index: num = 14235
     var title = "Hello, world!"
 
-    // to declare an immutable(u also able to write type after const keyword)
-    const name = "abdelrahman" // static size string
-    const age = 255 // will save in smallest numeric data type possible to its value
-    const isNone = true // 1-bit
+    // to declare an immutable (u can use datatype after colon that is after the variable name)
+    val name = "abdelrahman" // static size string
+    val age = 255 // will save in smallest numeric data type possible to its value in that case u8
+    val isNone = true // 1-bit
 
-
-    /* data types are
-    num: size auto number
-    str: size auto string
-    char: character
-    bool: boolean
-    i8 i16 i32 i64: integer number
-    u8 u16 u32 u64: unsigned integer number
-    f32 f64: floating point number*/
 
     // to declare nullable variable u should use ? after type
-    var? name = "youssefully";
-    u8? age = 23
+    var? age = 23
+    var name: str? = "youssefully"
+
+    /* data types
+
+    num
+    str
+    char
+    bool
+    i8 i16 i32 i64
+    u8 u16 u32 u64
+    f32 f64: floating point number
+
+    */
 
 }
