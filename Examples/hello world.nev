@@ -1,5 +1,7 @@
-fun main() {
+fun main -> print("Hello, world!")
+
+fun main {
     var areas = ['game', 'web', 'tools', 'science',
         'systems', 'embedded', 'drivers', 'GUI', 'mobile']
-    for area in areas => print('Hello, ${area} developers! \n')
+    for area in areas -> print('Hello, ${area} developers! \n')
 }
