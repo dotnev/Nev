@@ -82,8 +82,8 @@ So let's start with easy and simple types that the compiler will specify the typ
 To specify the type of the variable you should write it after color that is after the variable's name.
 For examples:
 ```nev
-var intger: i32 = 256
-var float: f64 = 256
+val intger: i32 = 256
+val float: f64 = 256
 ```
 
 
