@@ -1,0 +1,21 @@
+open Console as cmd
+
+
+// higher-order Closures functions example
+fun run: i32(value: i32, fun func: i32(i32)) -> func(value)
+
+fun main {
+    var x: i32 = 50
+
+    fun add_x: i32(y: i32) -> x + y
+    fun square: i32(num: i32) -> num ^ 2
+
+    cmd.print(add_x(run(5, square)))
+    // output: 75
+}
+
+
+fun main {
+    var nums = [1, 2, 3, 4, 5, 6]
+    nums.for_each(x -> cmd.print("${x}: hi"))
+}
