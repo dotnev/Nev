@@ -22,10 +22,10 @@
 - XMLdeclaration support(like xaml in .net but easier to enable for libraries)
 
 ## Star history
-<picture width="50%">
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date&theme=dark" />
   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date" />
+  <img width="50%" alt="Star History Chart" src="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date" />
 </picture>
 
 ## Thanks to our contributors
