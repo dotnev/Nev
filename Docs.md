@@ -1,4 +1,4 @@
-# Syntax of ViteSharp programming language 
+# Syntax of NEV programming language 
 
 let's start with default project settings which is in `program.yaml`
 ```yaml
@@ -101,5 +101,14 @@ i = 5
 ## str and its functions
 
 </details>
+
+</details>
+
+
+<details>
+<summary>Functions</summary>
+
+## Functions and FP
+Nev supports a range of FP features
 
 </details>
