@@ -1,7 +1,7 @@
 open Console as cmd
 
 
-// higher-order Closures functions example
+// higher-order Closures... functions example
 fun run: i32(value: i32, fun func: i32(i32)) -> func(value)
 
 fun main {
@@ -18,4 +18,5 @@ fun main {
 fun main {
     var nums = [1, 2, 3, 4, 5, 6]
     nums.for_each(x -> cmd.print("${x}: hi"))
+    // also map filter is fp features
 }
