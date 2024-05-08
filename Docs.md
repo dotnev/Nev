@@ -96,10 +96,10 @@ i = 5
 ```
 
 <details>
-<summary>str</summary>
+<summary>String</summary>
 
 ## str and its functions
 
-
 </details>
+
 </details>
