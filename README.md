@@ -9,7 +9,7 @@
 ## Features
 
 - Easy readable syntax
-- Full OOP support
+- Mix between FP and OOP
 - Safe as rust
 - Hight performance on par with C
 - Null Safety
@@ -18,13 +18,18 @@
 - Compile-time support
 - Human-readable C/JS backends
 - Easy to use c libraries(as built-in nev) and to build it
-- Flexible memory management(GC, arena allocation, Ownership, manual memory management)
+- Flexible memory management( autofree, GC, arena allocation, manual memory management)
 - XMLdeclaration support(like xaml in .net but easier to enable for libraries)
 
-
+## star-history
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date&theme=dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date" />
+  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date" />
+</picture>
 
 ## Thanks to our contributors
 
-<a href="https://github.com/Ameeer1/ViteSharp/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Ameeer1/ViteSharp" />
+<a href="https://github.com/Ameeer1/Nev/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Ameeer1/Nev" />
 </a>
