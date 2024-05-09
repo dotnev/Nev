@@ -142,6 +142,23 @@ output:
 ```
 Note that should know that `fun + name of function + colon + function type + open bracket + arguments + close bracket` if the type and name of function or variable and scope is a value of it.
 
+#### Anonymous functions & Closures
+Anonymous functions: that is normal functions that can be declared in another functions.
+Closures: This means that anonymous functions can inherit variables from the scope they were created in.
+For example:
+```nev
+fun main {
+    var arr = [1, 2, 3]
+    fun add_nomber: (x: i32) -> arr << x
+    repeat i, 7 {
+        add_nomber(i + 3)
+    }
+    arr.for_each(x => print(x + ' '))
+}
+```
+output:
+``` 1 2 3 4 5 6 7 8 9 10 ```
+
 #### Function as an Argument
 This approach involves passing a function (callback) as an argument to another function.The receiving function can then execute the callback, enabling flexible and customizable behavior.
 ```nev
@@ -159,7 +176,7 @@ output:
 ```
 
 #### Functions as Return Values
-
+Higher-order functions can also return new functions. This is often used for creating specialized functions or closures. For instance, you can create a function factory that generates functions with specific behavior.
 ```nev
 fun multiplier: fun(f: i32) ->
 	fun (x: i32) {
