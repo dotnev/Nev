@@ -140,7 +140,7 @@ fun sum: i32(x: i32, y: i32) -> x + y
 fun main {
     print_line(number())
     print_line(double(number()))
-    print_line(double(number()), number())
+    print_line(double(number()) + number())
 }
 ```
 output:
