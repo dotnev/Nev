@@ -109,14 +109,19 @@ i = 5
 <summary>Functional Programming</summary>
 
 ## Functions and FP
-Nev supports a range of FP features lets know it together
+Nev supports a range of FP features lets know it together!
+
+
+
 
 ### Functions
 Functions in Nev is a block of code that performs a specific task. Functions are used to modularize and reuse code, as well as to improve the readability and structure of a program.
 Declare functions is easy like datatypes declaration but the different u use `fun` keyword instead of `val`/`var` and after name or type of function you don't use equal sign and just write function value or `scope`
 
+
 #### How to declare a scope
 There is a 2 types of scope in nev the first one wich is curly-brackets scope and the second one is single-line scope using `->` and if you using that scope in function that return a value you will write a value directly after `->` without `return` keyword. 
+
 
 #### How to declare a function
 The syntax of declare a function is 
@@ -142,6 +147,9 @@ output:
 ```
 Note that should know that `fun + name of function + colon + function type + open bracket + arguments + close bracket` if the type and name of function or variable and scope is a value of it.
 
+
+
+
 ### Anonymous functions & Closures
 Anonymous functions: that is normal functions that can be declared in another functions.
 Closures: This means that anonymous functions can inherit variables from the scope they were created in.
@@ -160,8 +168,12 @@ fun main {
 output:
 ``` 1 2 3 4 5 6 7 8 9 10 ```
 
+
+
+
 ### Higher-order functions
 In functional programming, a higher-order function is a function that can accept other functions as arguments, return functions, or both. They enable abstraction, composition, and the creation of more flexible and reusable code.
+
 
 #### Function as an Argument
 This approach involves passing a function (callback) as an argument to another function.The receiving function can then execute the callback, enabling flexible and customizable behavior.
@@ -179,6 +191,7 @@ output:
 ```
 25
 ```
+
 
 #### Functions as Return Values
 Higher-order functions can also return new functions. This is often used for creating specialized functions or closures. For instance, you can create a function factory that generates functions with specific behavior.
