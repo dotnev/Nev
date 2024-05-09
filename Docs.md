@@ -31,6 +31,7 @@ at first i should say the Extension of nevlang is nev/nv.
 nev supports a big range of variables types let's learn it
 
 
+
 ### Read-Only variables
 Nevlang is immutable by default so let's start with immutable variables
 To declare an immutable variable u should use `val` keyword and it refrence to "value"
@@ -39,6 +40,7 @@ For example:
 val fingers = 5  // There are 5 finger in every hand
 val legs = 2     // Every human has 2 legs
 ```
+
 
 
 ### Mutable variables
@@ -57,6 +59,7 @@ For example:
 var age: u8? = 25
 var? name = "ahmed"
 ```
+
 
 
 ### Datatypes
@@ -85,6 +88,7 @@ For examples:
 val intger: i32 = 256
 val float: f64 = 256
 ```
+
 
 
 ### Dynamic types
