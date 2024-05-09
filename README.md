@@ -10,7 +10,8 @@
 
 - Easy readable syntax
 - Mix between FP and OOP
-- Safe as rust
+- Safe
+- Had built-in Concurrency system
 - High performance on par with C
 - Null Safety
 - Generate small executable files
@@ -18,7 +19,7 @@
 - Compile-time support
 - Human-readable C/JS backends
 - Easy to use c libraries(as built-in nev) and to build it
-- Flexible memory management( autofree, GC, arena allocation, manual memory management)
+- Flexible memory management(auto free, GC, arena allocation, RALL)
 - XMLdeclaration support(like xaml in .net but easier to enable for libraries)
 
 ## Star history
