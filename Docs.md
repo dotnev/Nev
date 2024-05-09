@@ -142,7 +142,7 @@ output:
 ```
 Note that should know that `fun + name of function + colon + function type + open bracket + arguments + close bracket` if the type and name of function or variable and scope is a value of it.
 
-#### Anonymous functions & Closures
+### Anonymous functions & Closures
 Anonymous functions: that is normal functions that can be declared in another functions.
 Closures: This means that anonymous functions can inherit variables from the scope they were created in.
 For example:
