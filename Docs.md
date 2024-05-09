@@ -109,6 +109,52 @@ i = 5
 <summary>Functions</summary>
 
 ## Functions and FP
-Nev supports a range of FP features
+Nev supports a range of FP features lets know it together
 
+
+### Higher-order function
+In functional programming, a higher-order function is a function that can accept other functions as arguments, return functions, or both. They enable abstraction, composition, and the creation of more flexible and reusable code.
+
+#### How to declare a scope
+There is a 2 types of scope in nev the first one wich is curly-brackets scope and the second one is single-line scope using `->` and if you using that scope in function that return a value you will write a value directly after `->` without `return` keyword. 
+
+#### How to declare a function
+The syntax of declare a function is 
+fun `keyword` + name of function + scope
+and you can specify arguments and type of function using type color after function name than type than arguments between brackets like
+`fun + function_name + : + function_type + ( + arguments + ) + scope`
+For Example:
+```nev
+fun number: i32 -> 50
+fun double: i32(x: i32) -> x * 2
+fun sum: i32(x: i32, y: i32) -> x + y
+fun main {
+    print_line(number())
+    print_line(double(number()))
+    print_line(double(number()), number())
+}
+```
+output:
+```
+50
+100
+150
+```
+Note that should know that `fun + name of function + colon + function type + open bracket + arguments + close bracket` if the type and name of function or variable and scope is a value of it.
+
+#### Function as an Argument
+This approach involves passing a function (callback) as an argument to another function.The receiving function can then execute the callback, enabling flexible and customizable behavior.
+```nev
+fun print_output: (fun fn: i32(i32), val: i32) { 
+    print(`The output is: ${fn(val)}`); 
+} 
+  
+fun square: i32(x: i32) -> x * x
+
+fun main -> print_output(square, 5)
+```
+output:
+```
+25
+```
 </details>
