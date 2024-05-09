@@ -98,7 +98,7 @@ i = 5
 <details>
 <summary>String</summary>
 
-## str and its functions
+### str and its functions
 
 </details>
 
