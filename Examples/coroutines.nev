@@ -1,0 +1,15 @@
+open console as cmd
+
+fun main {
+    /*
+        runs 1000000 coroutines using add go keywords before scope
+        and use waiting scope to wait every coroutines in it
+        and make canal(called channel in other languages)
+    */
+    
+    var c: Canal<str> = new()
+    waiting -> repeat i, 1_000_000 go {
+        c.send("that is the ${i} time that i see you!")
+    }
+    c.val.for_each(x -> cmd.print(x))
+}
