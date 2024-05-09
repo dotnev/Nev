@@ -106,14 +106,14 @@ i = 5
 
 
 <details>
-<summary>Functions</summary>
+<summary>Functional Programming</summary>
 
 ## Functions and FP
 Nev supports a range of FP features lets know it together
 
-
-### Higher-order function
-In functional programming, a higher-order function is a function that can accept other functions as arguments, return functions, or both. They enable abstraction, composition, and the creation of more flexible and reusable code.
+### Functions
+Functions in Nev is a block of code that performs a specific task. Functions are used to modularize and reuse code, as well as to improve the readability and structure of a program.
+Declare functions is easy like datatypes declaration but the different u use `fun` keyword instead of `val`/`var` and after name or type of function you don't use equal sign and just write function value or `scope`
 
 #### How to declare a scope
 There is a 2 types of scope in nev the first one wich is curly-brackets scope and the second one is single-line scope using `->` and if you using that scope in function that return a value you will write a value directly after `->` without `return` keyword. 
@@ -150,8 +150,9 @@ For example:
 fun main {
     var arr = [1, 2, 3]
     fun add_nomber: (x: i32) -> arr << x
-    repeat i, 7 {
-        add_nomber(i + 3)
+    val len = arr.len
+    repeat i, 10 - len {
+        add_nomber(i + len)
     }
     arr.for_each(x => print(x + ' '))
 }
@@ -159,8 +160,12 @@ fun main {
 output:
 ``` 1 2 3 4 5 6 7 8 9 10 ```
 
+### Higher-order functions
+In functional programming, a higher-order function is a function that can accept other functions as arguments, return functions, or both. They enable abstraction, composition, and the creation of more flexible and reusable code.
+
 #### Function as an Argument
 This approach involves passing a function (callback) as an argument to another function.The receiving function can then execute the callback, enabling flexible and customizable behavior.
+For example:
 ```nev
 fun print_output: (fun fn: i32(i32), val: i32) { 
     print(`The output is: ${fn(val)}`); 
@@ -177,6 +182,7 @@ output:
 
 #### Functions as Return Values
 Higher-order functions can also return new functions. This is often used for creating specialized functions or closures. For instance, you can create a function factory that generates functions with specific behavior.
+For example:
 ```nev
 fun multiplier: fun(f: i32) ->
 	fun (x: i32) {
