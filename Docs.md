@@ -157,4 +157,26 @@ output:
 ```
 25
 ```
+
+#### Functions as Return Values
+
+```nev
+fun multiplier: fun(f: i32) ->
+	fun (x: i32) {
+		return x * f
+	}
+
+fun main {
+    fun double = multiplier(2)
+    fun triple = multiplier(3)
+
+    print_line(double(5));
+    print_line(triple(5));
+}
+```
+output:
+```
+10
+15
+```
 </details>
