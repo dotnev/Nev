@@ -1,0 +1,43 @@
+type Vector2(var x, y: i16)
+
+enum Block {
+    land,
+    wall,
+    water,
+    hole
+}
+
+type Map(size, startup_position, target: Vector2) {
+    val players: arr<ptr<_ActivePlayer>> = []
+
+    var world_blocks: [size.y][size.x]Block {
+        set _blocks -> {
+            if _blocks.len == size.y & _blocks[0].len == size.x ->
+                world_blocks = _blocks
+        }
+    }
+    
+    fun set_block(position: Vector2, block: Block) ->
+        if position.y < size.y & position.x < size.x ->
+            world_blocks[position.y][position.x] = block
+
+    fun show_in_window -> go {
+        // code render the map using raylib
+    }
+}
+
+type _ActivePlayer {
+    init(val map: ptr<Map>) -> map.players.add(this.ptr)
+    
+    var abilities = arr<enum { fly, sweam, skip_walls }>
+    var is_won = false
+    _memory: [][]enum { unknown, poked, not_posible }
+    fun play_once {
+        // algo code
+    }
+},
+
+enum Player {
+    active: _ActivePlayer
+    idle
+}
