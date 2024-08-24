@@ -1,4 +1,4 @@
-fun main {
+fn main() {
     
     // to declare a mutable variable
     var name: dataType = value
@@ -13,9 +13,9 @@ fun main {
     val isNone = true // 1-bit
 
 
-    // to declare nullable variable u should use ? after type
-    var? age = 23
-    var name: str? = "youssefully"
+    // to declare nullable variable u should use option
+    var age = option(23)
+    var name: option[str] = "youssefully"
 
     /* data types
 

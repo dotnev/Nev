@@ -1,6 +1,0 @@
-fn main() {
-   val areas = ['game', 'web', 'tools', 'science', 'systems', 'embedded', 'drivers', 'GUI', 'mobile']
-   areas.for_each area =>
-      print(line('Hello, ${area} developers!'))
-}
-
