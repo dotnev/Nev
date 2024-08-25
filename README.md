@@ -38,15 +38,15 @@
 <div align="center" style="display:grid;place-items:center;">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date" />
-  <img width="70%" alt="Star History Chart" src="https://api.star-history.com/svg?repos=Ameeer1/Nev&type=Date" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=AmeerAttia/Nev&type=Date" />
+  <img width="70%" alt="Star History Chart" src="https://api.star-history.com/svg?repos=AmeerAttia/Nev&type=Date" />
 </picture>
 </div>
 
 ## Thanks to our contributors
 
 <a href="https://github.com/Ameeer1/Nev/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Ameeer1/Nev" />
+  <img src="https://contrib.rocks/image?repo=AmeerAttia/Nev" />
 </a>
 
 
