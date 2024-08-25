@@ -51,4 +51,4 @@
 
 
 ## At the end
-- *Thanks to @mega-haste/haste-lang for helping me in understanding some things work in programming languages*
+- *Thanks to @mega-haste for helping me in understanding some things work in programming languages*
