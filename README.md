@@ -7,7 +7,7 @@
 
 # Nev
 
-*Nev programming language* the start of next generation programming languages that add a lot of features to make it fun to use:
+**Nev programming language** the start of next generation programming languages that add a lot of features to make it fun to use:
 - final class
 - better multithreading
 - awesome libraies system
@@ -51,4 +51,4 @@
 
 
 ## At the end
-- *Thanks to @mega-haste for helping me in understanding some things work in programming languages*
+- **Thanks to @mega-haste for helping me in understanding some things work in programming languages**
