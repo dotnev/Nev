@@ -51,4 +51,4 @@
 
 
 ## At the end
-- **Thanks to [hesham](https://github.com/mega-haste) for helping me in understanding some things work in programming languages**
+- **Thanks to [hesham](https://github.com/mega-haste) for helping me in understanding how some things work in programming languages**
