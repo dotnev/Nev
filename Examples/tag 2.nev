@@ -1,0 +1,26 @@
+tag DistanceUnit(f32) {
+	cm { => me * 10^-2 },
+	m ,
+	km { => me * 10^3 }
+}
+
+fn jump(x: DistanceUnit) {
+	print("Jumped ${x}m");
+}
+
+fn main() {
+	jump(29: cm) // Jumped 0.29m
+}
+
+
+// compiler will convert it to be
+
+fn jump(x: f32) {
+  print("Jumped ${x}m")
+}
+
+fn main() {
+  jump(0.29) // Jumped 0.29m
+}
+
+

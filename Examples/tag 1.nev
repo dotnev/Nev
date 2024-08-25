@@ -1,0 +1,48 @@
+open time
+open console
+
+tag TimeUnit(i32) {
+  second,
+  minute,
+  hour
+}
+
+fn sleep(t: TimeUnit) {
+  val end_time = time.now + t * match tag_of(t) {
+    == .second { 1000 }
+    == .minute { 60000 }
+    == .hour { 3600000 }
+  }
+  while time.now > end_time;
+}
+
+fn main() {
+  sleep(60: second)
+  sleep(minute(1))
+  sleep(0.017 as hour)
+}
+
+
+// compiler will compiler it to be near to
+
+
+fn sleep_second(t: i32) {
+  val end_time = time.now + t * 1000
+  while time.now > end_time;
+}
+
+fn sleep_minute(t: i32) {
+  val end_time = time.now + t * 60000
+  while time.now > end_time;
+}
+
+fn sleep_hour(t: i32) {
+  val end_time = time.now + t * 3600000
+  while time.now > end_time;
+}
+
+fn main() {
+  sleep_second(60)
+  sleep_minute(1)
+  sleep_hour(0.017)
+}

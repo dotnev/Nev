@@ -5,6 +5,18 @@
 <h1>Nev programming language</h1>
 </div>
 
+# Nev
+
+*Nev programming language* the start of next generation programming languages that add a lot of features to make it fun to use:
+- final class
+- better multithreading
+- awesome libraies system
+- tag keyword
+- compile time code
+- libraries in language have setting(like flags)
+- language is just a kernal u can change anything around it
+- awesome syntax
+
 
 ## Features
 
@@ -36,3 +48,7 @@
 <a href="https://github.com/Ameeer1/Nev/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Ameeer1/Nev" />
 </a>
+
+
+## At the end
+- *Thanks to @mega-haste/haste-lang for helping me in understanding some things work in programming languages*
