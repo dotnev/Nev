@@ -1,12 +1,14 @@
 open time
 open console
 
+// That is tag keyword it is like enum but only able to declare only in function parameters 
 tag TimeUnit(i32) {
   second,
   minute,
   hour
 }
 
+// That is a function use tagged variable in parameters
 fn sleep(t: TimeUnit) {
   val end_time = time.now + t * match tag_of(t) {
     == .second { 1000 }
@@ -22,8 +24,8 @@ fn main() {
   sleep(0.017 as hour)
 }
 
-
-// compiler will compiler it to be near to
+// Tag isn't only enum but compiler split functions which use it to get more performance
+// compiler will compiler that code to be near to that
 
 
 fn sleep_second(t: i32) {

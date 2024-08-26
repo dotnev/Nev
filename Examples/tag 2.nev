@@ -1,6 +1,8 @@
+// That is also tag but it don't split that functions which use it but edit parameters 
+// U should let one member of tag(the default) like m in the bellow example
 tag DistanceUnit(f32) {
 	cm { => me * 10^-2 },
-	m ,
+	m,
 	km { => me * 10^3 }
 }
 
