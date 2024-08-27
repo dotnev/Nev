@@ -1,6 +1,6 @@
 open console as cmd
 
-fn main {
+fun main {
   /*
     runs 1000000 coroutines using add go keywords before scope
     and use waiting scope to wait every coroutines in it
@@ -9,7 +9,7 @@ fn main {
     
   var c = canal[str]
   await -> repeat i, 1_000_000 go {
-    wait(50: second)
+    wait(2: s)
     c.add("that is the ${i} time that i see you!")
   }
   c.for_each(x -> cmd.print(x: ln))

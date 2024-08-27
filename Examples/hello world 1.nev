@@ -1,1 +1,1 @@
-fn main -> print("Hello, world!": ln)
+fun main -> print(ln("Hello, world!"))

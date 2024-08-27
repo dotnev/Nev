@@ -5,8 +5,6 @@
 <h1>Nev programming language</h1>
 </div>
 
-# Nev
-
 **Nev programming language** the start of next generation programming languages that add a lot of features to make it fun to use:
 - final class
 - better multithreading

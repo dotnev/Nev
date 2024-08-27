@@ -6,22 +6,22 @@ tag DistanceUnit(f32) {
 	km { => me * 10^3 }
 }
 
-fn jump(x: DistanceUnit) {
+fun jump: (x: DistanceUnit) {
 	print("Jumped ${x}m");
 }
 
-fn main() {
+fun main {
 	jump(29: cm) // Jumped 0.29m
 }
 
 
 // compiler will convert it to be
 
-fn jump(x: f32) {
+fun jump: (x: f32) {
   print("Jumped ${x}m")
 }
 
-fn main() {
+fun main {
   jump(0.29) // Jumped 0.29m
 }
 

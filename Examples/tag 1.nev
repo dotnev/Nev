@@ -9,7 +9,7 @@ tag TimeUnit(i32) {
 }
 
 // That is a function use tagged variable in parameters
-fn sleep(t: TimeUnit) {
+fun sleep: (t: TimeUnit) {
   val end_time = time.now + t * match tag_of(t) {
     == .second { 1000 }
     == .minute { 60000 }
@@ -18,7 +18,7 @@ fn sleep(t: TimeUnit) {
   while time.now > end_time;
 }
 
-fn main() {
+fun main {
   sleep(60: second)
   sleep(minute(1))
   sleep(0.017 as hour)
@@ -28,22 +28,22 @@ fn main() {
 // compiler will compiler that code to be near to that
 
 
-fn sleep_second(t: i32) {
+fun sleep_second: (t: i32) {
   val end_time = time.now + t * 1000
   while time.now > end_time;
 }
 
-fn sleep_minute(t: i32) {
+fun sleep_minute: (t: i32) {
   val end_time = time.now + t * 60000
   while time.now > end_time;
 }
 
-fn sleep_hour(t: i32) {
+fun sleep_hour: (t: i32) {
   val end_time = time.now + t * 3600000
   while time.now > end_time;
 }
 
-fn main() {
+fun main {
   sleep_second(60)
   sleep_minute(1)
   sleep_hour(0.017)

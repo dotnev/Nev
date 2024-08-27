@@ -13,11 +13,11 @@ GlobalOpen:
  - Pixel
  - Http
  - Pigeon
-CompileLibraries:
- - Liberate
+CompilerLibraries:
+ - AutoFree
  - SpaghettiMaker
  - MathOptimizer
-Syntax:
+Parser:
  XMLDeclaration: true
  SyntaxChecks: FormalChecks
 ```
@@ -53,11 +53,11 @@ var contributors = 2   // There are mutable number of contributors
 
 
 #### Nullable variables
-Nev is null safety programming language to declare nullable mutable variable u should use `?` after datatype or `var` keyword if you didn't set a variable type
+Nev is null safety programming language to declare nullable mutable variable u should use `option`
 For example:
 ```nev
-var age: u8? = 25
-var? name = "ahmed"
+var age: option[u8] = 25
+var name = option["ahmed"]
 ```
 
 
@@ -135,7 +135,7 @@ and you can specify arguments and type of function using type color after functi
 For Example:
 ```nev
 fun number: i32 -> 50
-fun double: i32(x: i32) -> x * 2
+fun double: (x: i32)i32 -> x * 2
 fun sum: i32(x: i32, y: i32) -> x + y
 fun main {
     print_line(number())
@@ -166,7 +166,7 @@ fun main {
     repeat i, 10 - len {
         add_nomber(i + len)
     }
-    arr.for_each(x => print(x + ' '))
+    arr.for_each(x -> print(x + ' '))
 }
 ```
 output:
@@ -183,11 +183,11 @@ In functional programming, a higher-order function is a function that can accept
 This approach involves passing a function (callback) as an argument to another function.The receiving function can then execute the callback, enabling flexible and customizable behavior.
 For example:
 ```nev
-fun print_output: (fun fn: i32(i32), val: i32) { 
+fun print_output: (fn: (i32)i32, val: i32) {
     print(`The output is: ${fn(val)}`); 
 } 
   
-fun square: i32(x: i32) -> x * x
+fun square: (x: i32)i32 -> x * x
 
 fun main -> print_output(square, 5)
 ```
@@ -201,7 +201,7 @@ output:
 Higher-order functions can also return new functions. This is often used for creating specialized functions or closures. For instance, you can create a function factory that generates functions with specific behavior.
 For example:
 ```nev
-fun multiplier: fun(f: i32) ->
+fun multiplier: (f: i32) ->
 	fun (x: i32) {
 		return x * f
 	}
