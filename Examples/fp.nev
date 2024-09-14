@@ -2,21 +2,21 @@ open Console as cmd
 
 
 // higher-order Closures... functions example
-fun run: (v: i32, f: fn(i32)i32)i32 -> f(v)
+run:(v i32, f (i32)i32)i32 -> f(v)
 
-fun main {
-    var x: i32 = 50
+main: {
+    mut x := i32(50)
 
-    fun add_x: (y: i32)i32 -> x + y
-    fun square: (num: i32)i32 -> num ^ 2
+    add_x:(y i32)i32 -> x + y
+    square:(num i32)i32 -> num ^ 2
 
     cmd.print(add_x(run(5, square)))
     // output: 75
 }
 
 
-fun main {
-    var nums = [1, 2, 3, 4, 5, 6]
-    nums.for_each(x -> cmd.print("${x}: hi"))
+main: {
+    nums := [1, 2, 3, 4, 5, 6]
+    nums.for_each((x) -> cmd.print("${x}: hi"))
     // also map filter is fp features
 }

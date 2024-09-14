@@ -3,14 +3,14 @@ open console
 
 // That is tag keyword it is like enum but only able to declare only in function parameters 
 tag TimeUnit(i32) {
-  second,
-  minute,
+  second
+  minute
   hour
 }
 
 // That is a function use tagged variable in parameters
 fun sleep: (t: TimeUnit) {
-  val end_time = time.now + t * match tag_of(t) {
+  end_time := time.now + t * match tag_of(t) {
     == .second { 1000 }
     == .minute { 60000 }
     == .hour { 3600000 }
@@ -28,18 +28,18 @@ fun main {
 // compiler will compiler that code to be near to that
 
 
-fun sleep_second: (t: i32) {
-  val end_time = time.now + t * 1000
+fun sleep_second(t i32) {
+  end_time := time.now + t * 1000
   while time.now > end_time;
 }
 
-fun sleep_minute: (t: i32) {
-  val end_time = time.now + t * 60000
+fun sleep_minute(t i32) {
+  end_time := time.now + t * 60000
   while time.now > end_time;
 }
 
-fun sleep_hour: (t: i32) {
-  val end_time = time.now + t * 3600000
+fun sleep_hour(t i32) {
+  end_time := time.now + t * 3600000
   while time.now > end_time;
 }
 
