@@ -1,0 +1,22 @@
+Window :: type {
+    mut size: Obs<Vector2> {
+        on_set << render 
+    }
+    mut background: Obs<Color> {
+        on_set << {
+          render()
+          cmd.print("background changed")
+        }
+    }
+    render :: () {
+        print("a new frame rendered": line)
+    }
+}
+
+main :: () {
+    win := Window {
+        size = (600, 400)
+    }
+    win.size = (800, 600)  // This will automatically call rerender()
+    win.background = "#ff5544" // This also
+}
