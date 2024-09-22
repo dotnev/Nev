@@ -34,30 +34,31 @@ nev supports a big range of variables types let's learn it
 
 ### Read-Only variables
 Nevlang is immutable by default so let's start with immutable variables
-To declare an immutable variable u should use `val` keyword and it refrence to "value"
+To declare an immutable variable you should use `:=` operator
+And not '=' to make difference between change calue and declare a variable
 For example:
 ```nev
-val fingers = 5  // There are 5 finger in every hand
-val legs = 2     // Every human has 2 legs
+fingers := 5  // There are 5 finger in every hand
+legs := 2     // Every human has 2 legs
 ```
 
 
 
 ### Mutable variables
-You should declare any variables immutable using `val` but only if necessary use `var` keyword to make it mutable
+You should declare any variables immutable but only if necessary use `vmut` keyword to make it mutable
 For example:
 ```nev
-var customers = 77   // There are mutable number of customers
-var contributors = 2   // There are mutable number of contributors
+mut customers := 77   // There are mutable number of customers
+mut contributors := 2   // There are mutable number of contributors
 ```
 
 
 #### Nullable variables
-Nev is null safety programming language to declare nullable mutable variable u should use `option`
+Nev is null safety programming language to declare nullable mutable variable u should use `Option`
 For example:
 ```nev
-var age: option[u8] = 25
-var name = option["ahmed"]
+age := option(45) // Use option function that return option variable
+mut name = Option<str>("ahmed") // Declare an Option variabel
 ```
 
 
@@ -85,8 +86,8 @@ So let's start with easy and simple types that the compiler will specify the typ
 To specify the type of the variable you should write it after color that is after the variable's name.
 For examples:
 ```nev
-val intger: i32 = 256
-val float: f64 = 256
+mut intger := i32(256)
+mut float := f64(256)
 ```
 
 
@@ -124,32 +125,32 @@ Declare functions is easy like datatypes declaration but the different u use `fu
 
 
 #### How to declare a scope
-There is a 2 types of scope in nev the first one wich is curly-brackets scope and the second one is single-line scope using `->` and if you using that scope in function that return a value you will write a value directly after `->` without `return` keyword. 
+There is a 2 types of scope in nev the first one wich is curly-brackets scope and the second one is single-line scope using `=>` and if you using that scope in function that return a value you will write a value directly after `=>` without `return` keyword. 
 
 
 #### How to declare a function
 The syntax of declare a function is 
 fun `keyword` + name of function + scope
 and you can specify arguments and type of function using type color after function name than type than arguments between brackets like
-`fun + function_name + : + function_type + ( + arguments + ) + scope`
+`function_name + :: + function_type + ( + arguments + ) + scope`
 For Example:
 ```nev
-fun number: i32 -> 50
-fun double: (x: i32)i32 -> x * 2
-fun sum: i32(x: i32, y: i32) -> x + y
-fun main {
-    print_line(number())
-    print_line(double(number()))
-    print_line(double(number()) + number())
+info :: nul() => cmd.print("here is the info...": line) // that is a void function returns nul
+double :: i32(x: i32) => x * 2
+sum :: i32(x: i32, y: i32) => x + y
+main :: { // U can don't care about 'nul()' and compiler'll handle it 
+    info() 
+    print_line(double(50): line)
+    print_line(sum(double(50), 50): line)
 }
 ```
 output:
 ```
-50
+here is the info...
 100
 150
 ```
-Note that should know that `fun + name of function + colon + function type + open bracket + arguments + close bracket` if the type and name of function or variable and scope is a value of it.
+Note that `::` means equals like := for variables but for functions `function type + ( + arguments + )` is like variable type but for function and scope is the value.
 
 
 
@@ -159,14 +160,14 @@ Anonymous functions: that is normal functions that can be declared in another fu
 Closures: This means that anonymous functions can inherit variables from the scope they were created in.
 For example:
 ```nev
-fun main {
-    var arr = [1, 2, 3]
-    fun add_nomber: (x: i32) -> arr << x
-    val len = arr.len
+main :: {
+    mut arr := [1, 2, 3]
+    add_nomber :: (x: i32) => arr << x
+    len := arr.len
     repeat i, 10 - len {
         add_nomber(i + len)
     }
-    arr.for_each(x -> print(x + ' '))
+    arr.for_each(x) => cmd.print(x + ' ')
 }
 ```
 output:
@@ -183,13 +184,13 @@ In functional programming, a higher-order function is a function that can accept
 This approach involves passing a function (callback) as an argument to another function.The receiving function can then execute the callback, enabling flexible and customizable behavior.
 For example:
 ```nev
-fun print_output: (fn: (i32)i32, val: i32) {
+print_output :: (fn: i32(i32), val: i32) {
     print(`The output is: ${fn(val)}`); 
 } 
   
-fun square: (x: i32)i32 -> x * x
+square :: i32(x: i32) => x * x
 
-fun main -> print_output(square, 5)
+main :: => print_output(square, 5)
 ```
 output:
 ```
@@ -201,14 +202,14 @@ output:
 Higher-order functions can also return new functions. This is often used for creating specialized functions or closures. For instance, you can create a function factory that generates functions with specific behavior.
 For example:
 ```nev
-fun multiplier: (f: i32) ->
-	fun (x: i32) {
+multiplier :: (f: i32) =>
+	(x: i32) {
 		return x * f
 	}
 
 fun main {
-    fun double = multiplier(2)
-    fun triple = multiplier(3)
+    double :: multiplier(2)
+    triple :: multiplier(3)
 
     print_line(double(5));
     print_line(triple(5));

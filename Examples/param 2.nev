@@ -1,24 +1,24 @@
 open time
 open console
 
-// That is tag keyword it is like enum but only able to declare only in function parameters 
-tag TimeUnit(i32) {
+// That is parm keyword it is like enum but only able to declare only in function parameters 
+TimeUnit :: param(i32) {
   second
   minute
   hour
 }
 
-// That is a function use tagged variable in parameters
-fun sleep: (t: TimeUnit) {
-  end_time := time.now + t * match tag_of(t) {
+// That is a function use tagged variable(parm) in parameters
+sleep :: (t: TimeUnit) {
+  end_time := time.now + t * match t {
     == .second { 1000 }
     == .minute { 60000 }
     == .hour { 3600000 }
   }
-  while time.now > end_time;
+  while time.now > end_time
 }
 
-fun main {
+main :: () {
   sleep(60: second)
   sleep(minute(1))
   sleep(0.017 as hour)
@@ -28,22 +28,22 @@ fun main {
 // compiler will compiler that code to be near to that
 
 
-fun sleep_second(t i32) {
+sleep_second :: (t i32) {
   end_time := time.now + t * 1000
   while time.now > end_time;
 }
 
-fun sleep_minute(t i32) {
+sleep_minute :: (t i32) {
   end_time := time.now + t * 60000
   while time.now > end_time;
 }
 
-fun sleep_hour(t i32) {
+sleep_hour :: (t i32) {
   end_time := time.now + t * 3600000
   while time.now > end_time;
 }
 
-fun main {
+main :: () {
   sleep_second(60)
   sleep_minute(1)
   sleep_hour(0.017)

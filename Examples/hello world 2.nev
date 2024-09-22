@@ -1,6 +1,8 @@
-fun main {
+open cmd
+
+main :: () {
   areas := ['game', 'web', 'tools', 'science', 'systems', 'embedded', 'drivers', 'GUI', 'mobile']
-  for area in areas ->
-    print(ln('Hello, ${area} developers!'))
+  for area in areas =>
+    cmd.print("Hello, ${area} developers!": ln)
 }
 

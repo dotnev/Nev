@@ -1,0 +1,34 @@
+open cmd
+
+// Instead of doing this
+module test1
+
+pub write :: (message: str) {
+    cmd.print(message)
+}
+
+pub write_line :: (message: str) {
+  write(message + '\n')
+}
+
+
+
+// You can do that
+module test2
+
+pub WriteMessage :: param(str) { line, _text }
+
+pub write :: (message: WriteMessage) {
+  match message.type {
+    == .text => print(message)
+    == .line => print(message + '\n')
+  }
+}
+
+
+main :: () {
+  test1.write("hello,")
+  test1.write_line(" world")
+  test2.write("hello,": text)
+  test2.write(" world": line)
+}

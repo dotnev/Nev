@@ -2,29 +2,29 @@
    AND EVERY LIBRARY U WANT TO USE XMLDeclaration FEATURE WITH IT IT SHOULD ENABLE IT*/
 
 
-val hello_world_win = Window {
-    background = "#000",
-    children = [
-        Label { color = "#ff5544", text = "hello World", x_align = .center, y_align = .center }
-    ]
+hello_world_win := Window {
+  background = "#000",
+  children = [
+    Label { color = "#ff5544", text = "hello World", x_align = .center, y_align = .center }
+  ]
 }
 
 <Window out="hello_world_win" background="#000">
-    <Label color="#ff5544" text="hello World" x_align="center" y_align="center" />
+  <Label color="#ff5544" text="hello World" x_align="center" y_align="center" />
 </Window>
 
 
-fun hello_world_win: Widnow {
-    return Window {
-        background = "#000",
-        children = [
-            Label { color = "#ff5544", text = "hello World", x_align = .center, y_align = .center }
-        ]
-    }
+hello_world_win :: Widnow() {
+  return Window {
+    background = "#000",
+    children = [
+      Label { color = "#ff5544", text = "hello World", x_align = .center, y_align = .center }
+    ]
+  }
 }
 
-fun hello_world_win: Widnow {
-    return <Window background="#000">
-        <Label color="#ff5544" text="hello World" x_align="center" y_align="center" />
-    </Window>
+hello_world_win :: Widnow() {
+  return <Window background="#000">
+    <Label color="#ff5544" text="hello World" x_align="center" y_align="center" />
+  </Window>
 }
