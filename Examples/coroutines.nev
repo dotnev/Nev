@@ -8,9 +8,9 @@ main :: {
   */
 
   c := Canal(str)
-  await => repeat i, 1_000_000 => go {
+  await => repeat 1_000_000, i => go {
     wait(2: s)
-    c << "that is the ${i} time that i see you!"
+    c << "that is the $i time that i see you!"
   }
-  c.for_each(x) => cli.print(x: ln)
+  c.for_each x => cli.print(x: line)
 }
