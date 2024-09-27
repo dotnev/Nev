@@ -93,17 +93,18 @@ mut float := f64(256)
 
 
 ### Array
-Nev supports array
+Nev supports arrays.
+An array is a data structure that stores a collection of elements. These elements can be of the same type and are accessed using an index. Arrays are commonly used to store lists of data and enable efficient access to individual elements.
 
-
-
-### Dynamic types
-Nev supports also dynamic types but not recommended to use it. and it is added to introp some languages. you can use it by `let` keyword and it doesn't works in FormalChecks mode
-For example: 
+#### Creating an Array
 ```nev
-let i = "name"
-i = 5
+// Creating an array of numbers
+numbers := [1, 2, 3, 4, 5]
+
+// Creating an array of strings with type specified
+fruits := [str](["apple", "banana", "cherry"])
 ```
+
 
 
 <details>
