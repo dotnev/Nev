@@ -1,16 +1,16 @@
-open cmd
+open nev:cli
 
-main :: () {
+main :: {
   /*
     runs 1000000 coroutines using add go keywords before scope
     and use await scope to wait every coroutines in it
     and make canal(called channel in other languages)
   */
 
-  c := canal<str>
+  c := Canal(str)
   await => repeat i, 1_000_000 => go {
     wait(2: s)
     c << "that is the ${i} time that i see you!"
   }
-  c.for_each(x) => cmd.print(x: ln)
+  c.for_each(x) => cli.print(x: ln)
 }

@@ -58,7 +58,7 @@ Nev is null safety programming language to declare nullable mutable variable u s
 For example:
 ```nev
 age := option(45) // Use option function that return option variable
-mut name = Option<str>("ahmed") // Declare an Option variabel
+mut name := Option("ahmed") // Declare an Option variabel
 ```
 
 
@@ -92,6 +92,11 @@ mut float := f64(256)
 
 
 
+### Array
+Nev supports array
+
+
+
 ### Dynamic types
 Nev supports also dynamic types but not recommended to use it. and it is added to introp some languages. you can use it by `let` keyword and it doesn't works in FormalChecks mode
 For example: 
@@ -99,6 +104,7 @@ For example:
 let i = "name"
 i = 5
 ```
+
 
 <details>
 <summary>String</summary>
@@ -162,10 +168,10 @@ For example:
 ```nev
 main :: {
     mut arr := [1, 2, 3]
-    add_nomber :: (x: i32) => arr << x
+    add_number :: (x: i32, mut arr) => arr << x
     len := arr.len
     repeat i, 10 - len {
-        add_nomber(i + len)
+        add_number(i + len)
     }
     arr.for_each(x) => cmd.print(x + ' ')
 }

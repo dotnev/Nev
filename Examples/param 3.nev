@@ -1,24 +1,30 @@
-// That is also tag but it don't split that functions which use it but edit parameters 
-// U could let one member of tag(the default) like m using _ in the bellow example
-tag DistanceUnit(f32) {
-	cm { => me * 10^-2 },
-	_m,
-	km { => me * 10^3 }
+// That is also param but it doesn't split that functions which use it but edit parameters 
+// U could let one member of param(the default) like m using _ in the bellow example
+
+open nev:cli
+
+param DistanceUnit(f32) {
+	cm x => x * 10**-2
+	_m
+	km x => x * 10**3
 }
 
 jump :: (x: DistanceUnit) {
-	print("Jumped ${x}m");
+	cli.print("Jumped ${x}m");
 }
 
-main :: () {
+main :: {
 	jump(29: cm) // Jumped 0.29m
 }
 
 
+
 // compiler will convert it to be
 
+
+
 jump :: (x: f32) {
-  print("Jumped ${x}m")
+  cli.print("Jumped ${x}m")
 }
 
 main :: () {

@@ -6,14 +6,14 @@ Window :: type {
         print("a new frame rendered": line)
     }
 
-    constructor :: () {
+    me :: {
         add_observer([size, background], render)
     }
 }
 
-main :: () {
+main :: {
     win := Window {
         size = (600, 400)
     }
-    win.size = (800, 600)  // This will automatically call rerender()
+    win.size = (800, 600)  // This will automatically call render()
 }

@@ -1,8 +1,8 @@
-open cmd
+open nev:cli
 
-main :: () {
+main :: {
   areas := ['game', 'web', 'tools', 'science', 'systems', 'embedded', 'drivers', 'GUI', 'mobile']
   for area in areas =>
-    cmd.print("Hello, ${area} developers!": ln)
+    cli.print("Hello, $area developers!": line)
 }
 

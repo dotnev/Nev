@@ -1,11 +1,19 @@
+open nev:cli
+
 main :: () {
-  nums := [1, 2, 3, 4, 5, 6]
-  nums.for_each(x) => cmd.print("${x}: hi")
+  numbers := [1, 2, 3, 4, 5, 6]
+  numbers.for_each x => cli.print("${x}: hi": line)
+
+  doubled_numbers = numbers
+    |> filter x => x % 2 == 0
+    |> map x => x *2
+
+  cli.print(doubled_numbers: word) // 4 8 12
   // also map filter is fp features
 }
 
 // How it looks like:
 Array<T> <<
-  @for_each :: (f: (T)) {
+  @for_each :: (f: nul(T)) {
     for item in me.vals => f(item)
   }

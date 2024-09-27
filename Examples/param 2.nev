@@ -2,48 +2,48 @@ open time
 open console
 
 // That is parm keyword it is like enum but only able to declare only in function parameters 
-TimeUnit :: param(i32) {
+TimeUnit :: param(f32) {
   second
   minute
   hour
 }
 
-// That is a function use tagged variable(parm) in parameters
+// That is a function use tagged variable(param) in parameters
 sleep :: (t: TimeUnit) {
-  end_time := time.now + t * match t {
+  end_time := time.now + t * match t.type {
     == .second { 1000 }
     == .minute { 60000 }
     == .hour { 3600000 }
   }
-  while time.now > end_time
+  while time.now < end_time {}
 }
 
-main :: () {
+main :: {
   sleep(60: second)
   sleep(minute(1))
-  sleep(0.017 as hour)
+  sleep(0.017: hour)
 }
 
-// Tag isn't only enum but compiler split functions which use it to get more performance
+// Param isn't only enum but compiler split functions which use it to get more performance
 // compiler will compiler that code to be near to that
 
 
-sleep_second :: (t i32) {
+sleep_second :: (t: f32) {
   end_time := time.now + t * 1000
   while time.now > end_time;
 }
 
-sleep_minute :: (t i32) {
+sleep_minute :: (t: f32) {
   end_time := time.now + t * 60000
   while time.now > end_time;
 }
 
-sleep_hour :: (t i32) {
+sleep_hour :: (t: f32) {
   end_time := time.now + t * 3600000
   while time.now > end_time;
 }
 
-main :: () {
+main :: {
   sleep_second(60)
   sleep_minute(1)
   sleep_hour(0.017)
