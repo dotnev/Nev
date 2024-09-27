@@ -14,6 +14,7 @@ In TOP, a **type** serves as a foundational concept, akin to a class in OOP, but
 - **Performance**: Types are compiled to efficient machine representations, ensuring faster function calls. With careful design, the overhead of calling functions is minimized.
 - **Generic Support**: Types can be generic, allowing for flexible code reuse while maintaining strict type safety.
 - **No Inheritance**: TOP eliminates inheritance in favor of composition, reducing complexity and avoiding issues related to fragile base classes.
+- **Polymorphism**: The types supports polymorphism and parameters.
 
 **Example:**
 ```nev

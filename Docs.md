@@ -57,7 +57,7 @@ mut contributors := 2   // There are mutable number of contributors
 Nev is null safety programming language to declare nullable mutable variable u should use `Option`
 For example:
 ```nev
-age := option(45) // Use option function that return option variable
+age := Option(45) // Declare n Option variabel to number
 mut name := Option("ahmed") // Declare an Option variabel
 ```
 
@@ -142,9 +142,9 @@ and you can specify arguments and type of function using type color after functi
 `function_name + :: + function_type + ( + arguments + ) + scope`
 For Example:
 ```nev
-info :: nul() => cmd.print("here is the info...": line) // that is a void function returns nul
+info :: nul() => cli.print("here is the info...": line) // that is a void function returns nul
 double :: i32(x: i32) => x * 2
-sum :: i32(x: i32, y: i32) => x + y
+sum :: i32(x, y: i32) => x + y
 main :: { // U can don't care about 'nul()' and compiler'll handle it 
     info() 
     print_line(double(50): line)
@@ -169,12 +169,12 @@ For example:
 ```nev
 main :: {
     mut arr := [1, 2, 3]
-    add_number :: (x: i32, mut arr) => arr << x
+    add_number :: (x: i32, arr) => arr << x
     len := arr.len
-    repeat i, 10 - len {
+    repeat 10 - len, i {
         add_number(i + len)
     }
-    arr.for_each(x) => cmd.print(x + ' ')
+    arr.for_each x => cli.print(x: word)
 }
 ```
 output:
@@ -192,7 +192,7 @@ This approach involves passing a function (callback) as an argument to another f
 For example:
 ```nev
 print_output :: (fn: i32(i32), val: i32) {
-    print(`The output is: ${fn(val)}`); 
+    cli.print('The output is: ${fn(val)}'); 
 } 
   
 square :: i32(x: i32) => x * x

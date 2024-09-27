@@ -16,7 +16,7 @@ pub write_line :: (message: str) {
 // You can do that
 module test2
 
-pub WriteMessage :: param(str) { line, _text }
+pub param WriteMessage(str) { line, _text }
 
 pub write :: (message: WriteMessage) {
   match message.type {

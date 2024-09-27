@@ -2,7 +2,7 @@ open time
 open console
 
 // That is parm keyword it is like enum but only able to declare only in function parameters 
-TimeUnit :: param(f32) {
+param TimeUnit(f32) {
   second
   minute
   hour
