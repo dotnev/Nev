@@ -3,11 +3,10 @@
 
 open nev:cli
 
-param DistanceUnit(f32) {
-	cm x => x * 10**-2
-	_m
-	km x => x * 10**3
-}
+param DistanceUnit: f32
+	| cm x => x * 10 ** -2
+	| _m
+	| km x => x * 10 ** 3
 
 jump :: (x: DistanceUnit) {
 	cli.print("Jumped ${x}m");
@@ -23,11 +22,11 @@ main :: {
 
 
 
-jump :: (x: f32) {
+jump :: nul(x: f32) {
   cli.print("Jumped ${x}m")
 }
 
-main :: () {
+main :: nul() {
   jump(0.29) // Jumped 0.29m
 }
 

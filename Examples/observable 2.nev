@@ -1,4 +1,4 @@
-Window :: type {
+type Window {
     mut size: Obs<Vector2>
     mut background: Obs<Color>
 
@@ -15,5 +15,5 @@ main :: {
     win := Window {
         size = (600, 400)
     }
-    win.size = (800, 600)  // This will automatically call render()
+    win.size = (800, 600)  // This will automatically call render
 }

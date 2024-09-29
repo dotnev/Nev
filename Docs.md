@@ -214,7 +214,7 @@ multiplier :: (f: i32) =>
 		return x * f
 	}
 
-fun main {
+main :: {
     double :: multiplier(2)
     triple :: multiplier(3)
 
@@ -228,3 +228,10 @@ output:
 15
 ```
 </details>
+
+<details>
+<summary>Enum & Param</summary>
+
+## Enum
+Enum is
+

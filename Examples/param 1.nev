@@ -3,11 +3,11 @@ open nev:cli
 // Instead of doing this
 module test1
 
-pub write :: (message: str) {
+write :: (message: str) {
   cli.print(message)
 }
 
-pub write_line :: (message: str) {
+write_line :: (message: str) {
   write(message + '\n')
 }
 
@@ -16,9 +16,9 @@ pub write_line :: (message: str) {
 // You can do that
 module test2
 
-pub param WriteMessage(str) { line, _text }
+param WriteMessage: str | _text | line
 
-pub write :: (message: WriteMessage) {
+write :: (message: WriteMessage) {
   match message.type {
     == .text => cli.print(message)
     == .line => cli.print(message + '\n')

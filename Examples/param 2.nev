@@ -2,11 +2,7 @@ open time
 open console
 
 // That is parm keyword it is like enum but only able to declare only in function parameters 
-param TimeUnit(f32) {
-  second
-  minute
-  hour
-}
+param TimeUnit: f32 | second | minute | hour
 
 // That is a function use tagged variable(param) in parameters
 sleep :: (t: TimeUnit) {
@@ -20,7 +16,7 @@ sleep :: (t: TimeUnit) {
 
 main :: {
   sleep(60: second)
-  sleep(minute(1))
+  sleep(1: minute)
   sleep(0.017: hour)
 }
 

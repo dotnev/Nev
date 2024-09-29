@@ -1,6 +1,8 @@
 # **Type-Oriented Programming (TOP): A New Paradigm for Modern Development**
 
-In the ever-changing landscape of programming paradigms, developers are continuously seeking solutions that prioritize safety, performance, and clarity. **Type-Oriented Programming (TOP)** emerges as a groundbreaking paradigm that reimagines how we structure and interact with code. By centering programming around **types**, TOP integrates powerful concepts from both functional programming and object-oriented programming (OOP) to create a more efficient and expressive coding experience. This article explores the principles of TOP, its core concepts, and demonstrates why it is an essential framework for today's developers.
+At the start i should say I'm a non-junior programmer but I'm at least a programmer, And I'm called amir.
+Well the idea started from my pursuit of safety, performance, and clarity. After some research we came up with **Type-Oriented Programming (TOP)** as a new paradigm that reorganize how we structure and interact with code. TOP integrates powerful concepts some from functional programming or data oriented programming to create a more efficient and expressive coding experience. This article explores the principles of TOP, its core concepts.
+
 
 ### **What Is Type-Oriented Programming?**
 Type-Oriented Programming is a paradigm that emphasizes the use of **types** as fundamental building blocks for software design. Unlike traditional OOP, which often relies on classes and inheritance, TOP eliminates these complexities in favor of a more modular and efficient approach. In TOP, types are defined in such a way that after compilation, they are optimized to ensure faster function calls and reduce overhead.
@@ -13,8 +15,38 @@ In this paradigm, types are not merely abstractions; they become the backbone of
 In TOP, a **type** serves as a foundational concept, akin to a class in OOP, but with significant advantages:
 - **Performance**: Types are compiled to efficient machine representations, ensuring faster function calls. With careful design, the overhead of calling functions is minimized.
 - **Generic Support**: Types can be generic, allowing for flexible code reuse while maintaining strict type safety.
+**Example:**
+```nev
+Collection :: type<T: Type> {
+    _values: [T: 255]
+    set_item :: (index: u8, value: T) => _values[index] = value
+}
+
+main :: {
+    members := Collection<str<20>>
+    members.set(1, "ali")
+}
+
+```
 - **No Inheritance**: TOP eliminates inheritance in favor of composition, reducing complexity and avoiding issues related to fragile base classes.
-- **Polymorphism**: The types supports polymorphism and parameters.
+- **Polymorphism & Param**: The types supports polymorphism and parameters.
+**Example:**
+```nev
+Arr :: type<len: u32> {} // static array
+Arr :: type {} // dynamic array
+
+ColorFormat :: param {
+    rgp
+    rgpa
+}
+Color :: type<ColorFormat.rgp> {
+    r, g, b: u8
+}
+Color :: type<ColorFormat.rgpa> {
+    r, g, b, a: u8
+}
+
+```
 
 **Example:**
 ```nev
@@ -64,28 +96,47 @@ main :: {
 
 By leveraging modules, developers can create structured and maintainable codebases.
 
-#### **3. Trait: Flexible Interfaces Without Inheritance**
-TOP introduces **traits** as a mechanism for defining shared behavior without the need for inheritance. Traits serve as interfaces that types can implement, promoting a composition-based approach to polymorphism.
-- **Decoupling**: Traits are independent of the types they define, allowing for greater flexibility and modularity.
-- **Compile-Time Checks**: Implementation of traits is checked at compile time, enhancing safety and reliability.
+#### **3. Trait: A Blueprint for Behavior**
+
+In Nev, **traits** act as blueprints for behavior. They define a set of methods that a type must implement to conform to the trait's contract. This allows you to create flexible and reusable code by defining shared behavior without the need for inheritance.
+
+**Key Benefits:**
+
+- **Decoupling:** Traits are independent of the types that implement them, promoting modularity and reusability.
+- **Polymorphism:** Traits enable polymorphic behavior, where different types can be treated as the same interface, making your code more flexible and adaptable.
+- **Compile-Time Safety:** Nev's strong type system ensures that trait implementations are checked at compile time, preventing runtime errors and improving code reliability.
 
 **Example:**
+
 ```nev
-trait Drawable {
-    draw :: ()
+trait Animal {
+    speak :: (me)
 }
 
+type Dog {}
 // Implementing the trait for a type
-type Rectangle <- Drawable {
-    width: i32
-    height: i32
-
-    draw :: {
-        // Drawing logic here
+Dog <- Animal {
+    speak :: {
+        cli.print("Woof!": line)
     }
 }
-```
 
+type Cat {}
+// Implementing the trait for a type
+Cat <- Animal {
+    speak :: {
+        cli.print("Meow!": line)
+    }
+}
+
+main :: {
+    dog := Dog
+    cat := Cat
+
+    dog.speak()
+    cat.speak()
+}
+```
 Traits enable developers to build extensible systems without the complexities introduced by inheritance.
 
 #### **4. Generics: Type Safety and Flexibility**
@@ -96,7 +147,7 @@ Generics in TOP allow functions and types to operate on various data types while
 **Example:**
 ```nev
 // Generic function example
-swap :: <T>(a: T, b: T) -> T, T {
+swap :: <T>T, T|a: T, b: T| {
     return (b, a)
 }
 
@@ -109,17 +160,14 @@ main :: {
 
 Generics empower developers to write flexible and reusable code while ensuring type safety.
 
-#### **5. Enum and Parameter: Enhancing Readability and Optimization**
+#### **5. Enum and Param: Enhancing Readability and Optimization**
 TOP integrates **enums** and tagged unions, allowing developers to define variant types that enhance code clarity and efficiency. Param can serve as function parameters, making the code more expressive and easier to read.
 - **Tagged Unions**: Enums can be used as tagged unions, enabling more straightforward pattern matching and improved optimization during compilation.
 - **Readable Code**: Using param as parameters increases code readability and intent, allowing for clearer function signatures.
 
 **Example:**
 ```nev
-param WriteMessageParam(str) {
-    _text // make it default using underscore
-    line
-}
+param WriteMessageParam: str | _text | line
 
 write :: (message: WriteMessageParam) {
     match message.type {
@@ -152,8 +200,8 @@ run :: i32(v: i32, f: i32(i32)) => f(v)
 main :: () {
     mut x := 50
 
-    add_x :: i32(y: i32, mut x) => x + y
-    square :: i32(x: i32) => x ^ 2
+    add_x :: (y: i32, x) => x + y
+    square :: (x: i32) => x ^ 2
 
     cli.print(add_x(run(5, square)))
     // output: 75
