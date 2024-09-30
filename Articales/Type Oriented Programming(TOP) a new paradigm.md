@@ -48,23 +48,6 @@ Color :: type<ColorFormat.rgpa> {
 
 ```
 
-**Example:**
-```nev
-// Defining a simple type in Nev
-type Point {
-    x: i32
-    y: i32
-
-    zero :: {
-        x, y = 0, 0
-    }
-}
-
-// Function using the Point type
-calculate_distance :: (p1: Point, p2: Point) =>
-    sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2)
-```
-
 By structuring the program around types, TOP ensures that the code remains efficient and easy to understand.
 
 #### **2. Modules: Organizing Code for Clarity**

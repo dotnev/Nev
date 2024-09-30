@@ -6,11 +6,11 @@
 </div>
 
 **Nev programming language** the start of next generation programming languages that add a lot of features to make it fun to use:
-- final class
-- better multithreading
+- final type
+- tagged variable(param)
+- polymorphism in types and functions even with param
+- better multithreading system
 - awesome libraies system
-- tag keyword
-- compile time code
 - libraries in language have setting(like flags)
 - language is just a kernal u can change anything around it
 - awesome syntax
@@ -19,7 +19,7 @@
 ## Features
 
 - Easy readable syntax
-- Mix between FP and OOP
+- Nev is [TOP](https://github.com/dotnev/Nev/blob/main/Articales/Type%20Oriented%20Programming(TOP)%20a%20new%20paradigm.md) language(type oriented programming)
 - Safe
 - Had built-in Concurrency system
 - High performance on par with C
