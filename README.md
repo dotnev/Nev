@@ -1,6 +1,6 @@
 <div align="center" style="display:grid;place-items:center;">
 <p>
-    <a target="_blank"><img style="width:50%;min-width:250px;" src="https://github.com/dotnev/NevBranding/blob/main/Nev%20banner.svg"13 alt="Nevlang Banner"></a>
+    <a target="_blank"><img style="width:50%;min-width:350px;" src="https://github.com/dotnev/NevBranding/blob/main/Nev%20banner.svg"13 alt="Nevlang Banner"></a>
 </p>
 <h1>Nev programming language</h1>
 </div>
