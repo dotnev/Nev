@@ -1,4 +1,4 @@
-# **Taxonomy-Oriented Programming (TOP): A New Paradigm for Modern Development**
+# **Taxonomy-Oriented Programming (TOP): A New Paradigm**
 
 At the start i should say I'm a non-junior programmer but I'm at least a programmer, And I'm called amir.
 Well the idea started from my pursuit of safety, performance, and clarity. After some research we came up with **Taxonomy-Oriented Programming (TOP)** as a new paradigm that reorganize how we structure and interact with code. TOP integrates powerful concepts some from functional programming and data oriented programming to create a more efficient and expressive coding experience. This article explores the principles of TOP, its core concepts.
