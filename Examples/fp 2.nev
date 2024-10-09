@@ -1,13 +1,14 @@
-open nev:cli
+use nev:cli
 
-main :: () {
+main :: {
   numbers := [1, 2, 3, 4, 5, 6]
-  numbers.for_each x => cli.print("${x}: hi": line)
+  numbers.for_each(cli.write("${it}: hi": line))
 
   doubled_numbers = numbers
-    |> filter x => x % 2 == 0
-    |> map x => x *2
-
-  cli.print(doubled_numbers: word) // 4 8 12
-  // also map filter is fp features
+    |> filter(it % 2 == 0)
+    |> map(it * 2)
+    |> for_each(cli.write(it: word))
+    // 4 8 12
+  
+  // also map filter for_each is fp features
 }

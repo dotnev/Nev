@@ -1,4 +1,4 @@
-type Window {
+Window :: Kind {
     mut size: Obs<Vector2>
     mut background: Obs<Color>
 

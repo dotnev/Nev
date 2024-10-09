@@ -14,8 +14,8 @@ main :: () {
 
 
     // to declare nullable variable u should use option
-    age := option(23) // function return option enum
-    mut name := Option<str>("youssefully") // option enum
+    age := ?u8(24) // return option that compiler'll help u with
+    mut name := Option("youssefully") // option type
 
     /* data types
 

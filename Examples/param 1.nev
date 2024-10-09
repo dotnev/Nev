@@ -1,14 +1,14 @@
-open nev:cli
+use nev:cli
 
 // Instead of doing this
 module test1
 
-write :: (message: str) {
-  cli.print(message)
+print :: (message: str) {
+  cli.write(message)
 }
 
-write_line :: (message: str) {
-  write(message + '\n')
+print_line :: (message: str) {
+  cli.write(message + '\n')
 }
 
 
@@ -16,19 +16,22 @@ write_line :: (message: str) {
 // You can do that
 module test2
 
-param WriteMessage: str | _text | line
+PrintMessage :: param(str) {
+  _Text
+  Line
+}
 
-write :: (message: WriteMessage) {
-  match message.type {
-    == .text => cli.print(message)
-    == .line => cli.print(message + '\n')
+print :: (message: WriteMessage) {
+  when message.type {
+    is Text => cli.write(message)
+    is Line => cli.write(message + '\n')
   }
 }
 
 
 main :: () {
-  test1.write("hello,")
-  test1.write_line(" world")
-  test2.write("hello,")
-  test2.write(" world": line)
+  test1.print("hello,")
+  test1.print_line(" world")
+  test2.print("hello,")
+  test2.print(" world": Line)
 }

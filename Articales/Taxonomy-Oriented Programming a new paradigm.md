@@ -5,7 +5,7 @@ Well the idea started from my pursuit of safety, performance, and clarity. After
 
 
 ### **What Is Taxonomy-Oriented Programming?**
-Taxonomy-Oriented Programming is a paradigm that emphasizesthe use of **Kind** and **Type** as fundamental building blocks for software design. Unlike traditional OOP, which often relies on classes and inheritance, TOP eliminates these complexities infavor of a more modular and efficient approach.
+Taxonomy-Oriented Programming is a paradigm that emphasizesthe use of **`Kind`, `Enum`, `Role`, `Case`, and `Function`** as fundamental building blocks for software design. Unlike traditional OOP, which often relies on classes and inheritance, TOP eliminates these complexities infavor of a more modular and efficient approach.
 
 TOP supports generics, extensive use of polymorphism, promotes immutability, better ways to function calls, and forgoes inheritance, paving the way for a new level of code clarity and performance. By focusing on `Types` and `Kinds`, developers can create more maintainable and performant applications without the pitfalls associated with classic OOP designs.
 
@@ -19,13 +19,13 @@ In TOP, a `Kind` serves as a foundational concept, akin to a class in OOP, but w
 ```nev
 Collection[T] :: Kind {
     _values: [T: 255]
-    set_item :: (index: u8, value: T) => _values[index] = value
+    add :: (index: u8, value: T) => _values[index] = value
 }
 
 main :: {
     members := Collection[str[20]]
     // u can add string up to 20 character
-    members.set(1, "ali")
+    members.add(1, "ali")
 }
 
 ```
@@ -40,10 +40,10 @@ ColorFormat :: Param {
     rgp
     rgpa
 }
-Color[ColorFormat.rgp] :: Type {
+Color[ColorFormat.rgp] :: Kind {
     r, g, b: u8
 }
-Color[ColorFormat.rgpa] :: Type {
+Color[ColorFormat.rgpa] :: Kind {
     r, g, b, a: u8
 }
 
@@ -59,6 +59,7 @@ By structuring the program around kinds, TOP ensures that the code remains effic
 **Example:**
 ```nev
 use nev:cli
+
 module geometry {
     Circle :: Kind {
         radius: f64
@@ -74,56 +75,121 @@ main :: {
         radius = 5.0
     }
     area := my_circle.calculate_area
-    cli.print(area)
+    cli.write(area)
 }
 ```
 
 By leveraging modules, developers can create structured and maintainable codebases.
 
-#### **3. Trait: A Blueprint for Behavior**
+#### **3. Role: A Blueprint for Behavior**
 
-In Nev, **traits** act as blueprints for behavior. They define a set of methods that a `Kind` must implement to conform to the trait's contract. This allows you to create flexible and reusable code by defining shared behavior without the need for inheritance.
+In Nev, **`Role`** is just role to describe kind behavior. They define a set of methods that a `Kind` must implement to conform to the `Role's contract. This allows you to create flexible and reusable code by defining shared behavior without the need for inheritance.
 
 **Key Benefits:**
 
-- **Decoupling:** Traits can be independent of the types that implement them, promoting modularity and reusability.
-- **Polymorphism:** Traits enable polymorphic behavior, where different `Kinds` can be treated as the same interface, making your code more flexible and adaptable.
+- **Decoupling:** Roles can be independent of the types that implement them, promoting modularity and reusability.
+- **Polymorphism:** Roles enable polymorphic behavior, where different `Kinds` can be treated as the same interface, making your code more flexible and adaptable.
+- **Versatile:** Can be applied on `Kind`s and `Enum`s
 
 **Example:**
 
 ```nev
-Animal :: Trait {
+use cli {*}
+
+Animal :: Role {
     speak :: ()
 }
 
 Dog :: Kind {}
-// Implementing the trait for a type
-Dog <- Animal {
-    speak :: {
-        cli.print("Woof!": line)
-    }
-}
+Dog << speak :: => write("Woof!": Line)
+// So kind of dogs can play the role of an animal.
 
 Cat :: Kind {}
-// Implementing the trait for a type
-Cat <- Animal {
-    speak :: {
-        cli.print("Meow!": line)
-    }
-}
+Cat << speak :: => write("Meow!": Line)
+// So kind of cats can play the role of an animal.
+
+talk :: (me: Animal) => me.speak
 
 main :: {
     dog := Dog
     cat := Cat
 
-    dog.speak
-    cat.speak
+    talk(dog)
+    talk(cat)
 }
 ```
-Traits enable developers to build extensible systems without the complexities introduced by inheritance.
+Roles enable developers to build extensible systems without the complexities introduced by inheritance.
 
-#### **4. Generics: Type Safety and Flexibility**
-Generics in TOP allow `kinds`, `types`, `traits`, and `functions` to operate on various data types while maintaining strict type safety. This feature promotes code reuse without sacrificing performance or clarity.
+#### **4. Enum: Algebraic Data Type**
+TOP integrates `Enum` which is Algebraic data type, allowing developers to define variant kinds that enhance code clarity and efficiency.
+
+**Example:**
+```nev
+JsonNode :: Enum {
+    Nil
+    (Bool)
+    (F64)
+    (Str)
+    ([JsonNode])
+}
+```
+
+#### **5. Case: Enhancing Readability and Optimization**
+**`Case`** can serve as function parameters, making the code more expressive and easier to read and some time much performance.
+- **Performance**: Functions that uses `Case` can be splited and optimized by compiler. So that'll offer high performance.
+- **Readable Code**: Using param as parameters increases code readability and intent, allowing for clearer function signatures.
+
+**Example:**
+```nev
+use cli
+PrintMessageParam :: Case(str) {
+    _Text
+    Line
+}
+
+print :: (message: WriteMessageC) {
+    when message {
+        is Text => cli.write(message)
+        is Line => cli.write(message + "\n")
+    }
+}
+
+main :: {
+    print("Hello,")
+    print("World!": Line)
+}
+```
+
+This approach makes function calls clearer and optimizes code paths at compile time.
+
+#### **6. Functional Programming: Immutability and Pure Functions**
+TOP embraces **functional programming** principles, emphasizing immutability and pure functions to create predictable and maintainable code.
+- **Immutability**: All data in TOP is immutable by default, reducing side effects and enhancing predictability.
+- **Pure Functions**: Functions are encouraged to be pure, leading to easier testing and debugging.
+
+**Example:**
+```nev
+use nev:cli
+
+
+// higher-order Closures... functions example
+run :: i32(v: i32, f: i32(i32)) => f(v)
+
+main :: {
+    mut x := 50
+
+    add_x :: (y: i32, x) => x + y
+    square :: (x: i32) => x ^ 2
+
+    cli.write(add_x(run(5, square)))
+    // output: 75
+}
+```
+
+Functional programming principles help developers create robust and maintainable applications.
+
+#### **7. Generics: Type Safety and Flexibility**
+Generics in TOP allow **`Kind`s, `Enum`s, `Role`s, and `function`s** to operate on various data types while maintaining strict type safety. This feature promotes code reuse without sacrificing performance or clarity.
 - **Compile-Time Resolution**: Generics are resolved at compile time, eliminating any runtime overhead.
 - **Type Constraints**: Developers can enforce constraints on generic types, ensuring type safety.
 
@@ -142,60 +208,6 @@ main :: {
 ```
 
 Generics empower developers to write flexible and reusable code while ensuring type safety.
-
-#### **5. Type and Param: Enhancing Readability and Optimization**
-TOP integrates `type` which is Algebraic data type, allowing developers to define variant kinds that enhance code clarity and efficiency. 
-Param can serve as function parameters, making the code more expressive and easier to read and some time much performance.
-- **Logical Code**: `Type` is used as tagged unions/algebraic data type, which make code more safer and logical.
-- **Readable Code**: Using param as parameters increases code readability and intent, allowing for clearer function signatures.
-
-**Example:**
-```nev
-WriteMessageParam :: Param(str) {
-    _text
-    line
-}
-
-write :: (message: WriteMessageParam) {
-    when message {
-        is text => print(message)
-        is line => print(message + "\n")
-    }
-}
-
-main :: {
-    write("Hello,")
-    write("World!": line)
-}
-```
-
-This approach makes function calls clearer and optimizes code paths at compile time.
-
-#### **6. Functional Programming: Immutability and Pure Functions**
-TOP embraces **functional programming** principles, emphasizing immutability and pure functions to create predictable and maintainable code.
-- **Immutability**: All data in TOP is immutable by default, reducing side effects and enhancing predictability.
-- **Pure Functions**: Functions are encouraged to be pure, leading to easier testing and debugging.
-
-**Example:**
-```nev
-open nev:cli
-
-
-// higher-order Closures... functions example
-run :: i32(v: i32, f: i32(i32)) => f(v)
-
-main :: {
-    mut x := 50
-
-    add_x :: (y: i32, x) => x + y
-    square :: (x: i32) => x ^ 2
-
-    cli.print(add_x(run(5, square)))
-    // output: 75
-}
-```
-
-Functional programming principles help developers create robust and maintainable applications.
 
 ### **Why Taxonomy-Oriented Programming Matters**
 Taxonomy-Oriented Programming represents a significant advancement in software development, offering a robust framework for creating high-performance, safe, and maintainable applications. By focusing on types, modules, traits, generics, enums, and functional programming, TOP equips developers with the tools to write clean, efficient, and expressive code.

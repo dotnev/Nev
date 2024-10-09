@@ -1,23 +1,29 @@
-open time
-open console
+use {
+  time
+  cli
+}
 
 // That is parm keyword it is like enum but only able to declare only in function parameters 
-param TimeUnit: f32 | second | minute | hour
+TimeUnit :: Param(f32) {
+  _Second // defualt
+  Minute
+  Hour
+}
 
 // That is a function use tagged variable(param) in parameters
 sleep :: (t: TimeUnit) {
-  end_time := time.now + t * match t.type {
-    == .second { 1000 }
-    == .minute { 60000 }
-    == .hour { 3600000 }
+  end_time := time.now + t * when t {
+    is Second { 1000 }
+    is Minute { 60000 }
+    is Hour { 3600000 }
   }
   while time.now < end_time {}
 }
 
 main :: {
-  sleep(60: second)
-  sleep(1: minute)
-  sleep(0.017: hour)
+  sleep(60: Second)
+  sleep(1: Minute)
+  sleep(0.017: Hour)
 }
 
 // Param isn't only enum but compiler split functions which use it to get more performance

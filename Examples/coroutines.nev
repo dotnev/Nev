@@ -1,4 +1,4 @@
-open nev:cli
+use nev:cli
 
 main :: {
   /*
@@ -7,10 +7,10 @@ main :: {
     and make canal(called channel in other languages)
   */
 
-  c := Canal(str)
+  c := Canal[str]
   await => repeat 1_000_000, i => go {
     wait(2: s)
     c << "that is the $i time that i see you!"
   }
-  c.for_each x => cli.print(x: line)
+  c.for_each(cli.write(it: line))
 }

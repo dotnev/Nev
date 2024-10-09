@@ -1,0 +1,24 @@
+use {
+  cli {*}
+  random
+}
+
+Person :: Kind { age: U32; name: Str[10] }
+
+main :: () {
+  // Generate a list of random people
+  people := [Person: 30].iter
+    |> age(random.u32(1, 35))
+    |> name(random.text(10, { alpha = true }))
+  
+  // Sort them by age
+  people.sort(a.age > sort.age)
+
+  // Group them by age
+  grouped_people := people.group(a.age == b.age)
+
+  // Output groups
+  grouped_people.iter
+    |> write("People of age ${it[0].age}:": Line)
+    |> it.iter(write("    ${it.nams}"): Line)
+}

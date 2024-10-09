@@ -2,7 +2,7 @@
 
 let's start with default project settings which is in `program.yaml`
 ```yaml
-Name: test
+Name: moon_app
 Type: App
 Backend: TCC
 OS: windows
@@ -58,7 +58,7 @@ Nev is null safety programming language to declare nullable mutable variable u s
 For example:
 ```nev
 age := Option(45) // Declare n Option variabel to number
-mut name := Option("ahmed") // Declare an Option variabel
+mut name := ?"ahmed" // Declare an Option variabel
 ```
 
 
@@ -142,11 +142,11 @@ and you can specify arguments and type of function using type color after functi
 `function_name + :: + function_type + ( + arguments + ) + scope`
 For Example:
 ```nev
-info :: nul() => cli.print("here is the info...": line) // that is a void function returns nul
+info :: nul() => cli.write("here is the info...": line) // that is a void function returns nul
 double :: i32(x: i32) => x * 2
 sum :: i32(x, y: i32) => x + y
 main :: { // U can don't care about 'nul()' and compiler'll handle it 
-    info() 
+    info()
     print_line(double(50): line)
     print_line(sum(double(50), 50): line)
 }
@@ -167,6 +167,7 @@ Anonymous functions: that is normal functions that can be declared in another fu
 Closures: This means that anonymous functions can inherit variables from the scope they were created in.
 For example:
 ```nev
+use cli {*}
 main :: {
     mut arr := [1, 2, 3]
     add_number :: (x: i32, arr) => arr << x
@@ -174,7 +175,7 @@ main :: {
     repeat 10 - len, i {
         add_number(i + len)
     }
-    arr.for_each x => cli.print(x: word)
+    arr.for_each(write(it: Word))
 }
 ```
 output:
@@ -192,7 +193,7 @@ This approach involves passing a function (callback) as an argument to another f
 For example:
 ```nev
 print_output :: (fn: i32(i32), val: i32) {
-    cli.print('The output is: ${fn(val)}'); 
+    cli.write('The output is: ${fn(val)}'); 
 } 
   
 square :: i32(x: i32) => x * x
@@ -209,17 +210,17 @@ output:
 Higher-order functions can also return new functions. This is often used for creating specialized functions or closures. For instance, you can create a function factory that generates functions with specific behavior.
 For example:
 ```nev
+use cli {*}
+
 multiplier :: (f: i32) =>
-	(x: i32) {
-		return x * f
-	}
+	(x: i32) => x * f
 
 main :: {
     double :: multiplier(2)
     triple :: multiplier(3)
 
-    print_line(double(5));
-    print_line(triple(5));
+    write(double(5): Line)
+    write(triple(5): Line)
 }
 ```
 output:
@@ -235,3 +236,9 @@ output:
 ## Enum
 Enum is
 
+</details>
+
+Window :: Kind {} // struct - class
+Action :: Enum {} // enum - union
+Widget :: Role {} // interface - trait
+WriteC :: Case {} // param - tag

@@ -1,15 +1,15 @@
-class Vector2(var x, y: i16)
+Vector2 :: Kind { mut x, y: i16 }
 
 
-enum Block {
-  land,
-  wall,
-  water,
-  hole
+Block :: Typs {
+  Land,
+  Wall,
+  Water,
+  Hole
 }
 
-class Map(size, startup_position, target: Vector2) {
-  val players: arr<ptr<_ActivePlayer>> = []
+Map :: Kind(size, startup_position, target: Vector2) {
+  players: [ptr[_ActivePlayer]] = []
 
   var world_blocks: [size.y][size.x]Block {
     set _blocks -> {
@@ -27,18 +27,18 @@ class Map(size, startup_position, target: Vector2) {
   }
 }
 
-class _ActivePlayer {
-  init(val map: ptr<Map>) -> map.players.add(this.ptr)
+_ActivePlayer :: Kind{
+  init(val map: ptr<Map>) => map.players << me.ptr
     
-  var abilities = arr<enum { fly, sweam, skip_walls }>
-  var is_won = false
-  _memory: [][]enum { unknown, poked, not_posible }
-  fun play_once {
+  mut abilities = [Type { Fly, Sweam, SkipWalls }]
+  mut is_won = false
+  _memory: [[Type { Unknown, Poked, NotPosible }]]
+  play_once :: {
     // algo code
   }
 },
 
-enum Player {
-    active: _ActivePlayer
-    idle
+Player :: Type {
+    Active: _ActivePlayer
+    Idle
 }

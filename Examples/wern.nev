@@ -1,0 +1,16 @@
+use cli {*}
+
+Wren :: Kind {
+  fly_to :: (city: str) => write("Flying to $city")
+}
+
+main :: {
+  write("Hello, world!")
+
+  wren := Wren
+  wren.fly_to("Paris")
+
+  adj := Canal[Str[5]]
+  go => adj << ["small", "clean", "fast"]
+  adj.iter(write(it))
+}

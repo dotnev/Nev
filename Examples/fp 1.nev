@@ -1,4 +1,4 @@
-open nev:cli
+use nev:cli
 
 
 // higher-order Closures... functions example
@@ -7,9 +7,9 @@ run :: i32(v: i32, f: i32(i32)) => f(v)
 main :: {
     mut x := 50
 
-    add_x :: i32(y: i32, x) => x + y
-    square :: i32(x: i32) => x ** 2
+    add_x :: (y: i32, x) => x + y
+    square :: (x: i32) => x ** 2
 
-    cli.print(add_x(run(5, square)))
+    cli.write(add_x(run(5, square)))
     // output: 75
 }

@@ -1,4 +1,4 @@
-open nev:cli
+use nev:cli
 
 main :: {
   areas := ['game', 'web', 'tools', 'science', 'systems', 'embedded', 'drivers', 'GUI', 'mobile']

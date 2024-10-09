@@ -1,6 +1,6 @@
-open nev:cli
+use nev:cli
 
-type Window {
+Window :: Kind {
     mut size: Obs<Vector2> {
         on_set << render 
     }
