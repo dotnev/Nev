@@ -5,14 +5,14 @@ Well the idea started from my pursuit of safety, performance, and clarity. After
 
 
 ### **What Is Taxonomy-Oriented Programming?**
-Taxonomy-Oriented Programming is a paradigm that emphasizesthe use of **`Kind`, `Enum`, `Role`, `Case`, and `Function`** as fundamental building blocks for software design. Unlike traditional OOP, which often relies on classes and inheritance, TOP eliminates these complexities infavor of a more modular and efficient approach.
+Taxonomy-Oriented Programming is a paradigm that emphasizesthe use of **Kind**, **Enum**, **Role**, **Case**, and **Function** as fundamental building blocks for software design. Unlike traditional OOP, which often relies on classes and inheritance, TOP eliminates these complexities infavor of a more modular and efficient approach.
 
-TOP supports generics, extensive use of polymorphism, promotes immutability, better ways to function calls, and forgoes inheritance, paving the way for a new level of code clarity and performance. By focusing on `Types` and `Kinds`, developers can create more maintainable and performant applications without the pitfalls associated with classic OOP designs.
+TOP supports generics, extensive use of polymorphism, promotes immutability, better ways to function calls, and forgoes inheritance, paving the way for a new level of code clarity and performance. By focusing on *Logic*, developers can create more maintainable and performant applications without the pitfalls associated with classic OOP designs.
 
 ### **Core Concepts of Taxonomy-Oriented Programming**
 
 #### **1. Kind: The Cornerstone of TOP**
-In TOP, a `Kind` serves as a foundational concept, akin to a class in OOP, but with some advantages:
+In TOP, a **Kind** serves as a foundational concept, akin to a class in OOP, but with some advantages:
 - **Performance**: In **Kinds** the overhead of calling functions is minimized unlike classes in OOP(which has overhead).
 - **Generic**: Kinds can be generic, allowing for flexible code reuse.
 **Example:**
@@ -30,7 +30,7 @@ main :: {
 
 ```
 - **No Inheritance**: TOP eliminates inheritance in favor of composition and traits, reducing complexity and avoiding [oop issues](https://30dayscoding.com/blog/limitations-of-inheritance-in-oop).
-- **Polymorphism & Param**: `The Kinds` supports polymorphism and parameters.
+- **Polymorphism & Param**: The **Kind**s supports polymorphism and parameters.
 **Example:**
 ```nev
 Arr[len: i32] :: Kind {} // static array
@@ -83,13 +83,13 @@ By leveraging modules, developers can create structured and maintainable codebas
 
 #### **3. Role: A Blueprint for Behavior**
 
-In Nev, **`Role`** is just role to describe kind behavior. They define a set of methods that a `Kind` must implement to conform to the `Role's contract. This allows you to create flexible and reusable code by defining shared behavior without the need for inheritance.
+In Nev, **Role** is just role to describe kind behavior. They define a set of methods that a **Kind** must implement to conform to the &&Role**s contract. This allows you to create flexible and reusable code by defining shared behavior without the need for inheritance.
 
 **Key Benefits:**
 
 - **Decoupling:** Roles can be independent of the types that implement them, promoting modularity and reusability.
-- **Polymorphism:** Roles enable polymorphic behavior, where different `Kinds` can be treated as the same interface, making your code more flexible and adaptable.
-- **Versatile:** Can be applied on `Kind`s and `Enum`s
+- **Polymorphism:** Roles enable polymorphic behavior, where different **Kind**s can be treated as the same interface, making your code more flexible and adaptable.
+- **Versatile:** Can be applied on **Kind**s and **Enum**s
 
 **Example:**
 
@@ -121,7 +121,7 @@ main :: {
 Roles enable developers to build extensible systems without the complexities introduced by inheritance.
 
 #### **4. Enum: Algebraic Data Type**
-TOP integrates `Enum` which is Algebraic data type, allowing developers to define variant kinds that enhance code clarity and efficiency.
+TOP integrates **Enum** which is Algebraic data type, allowing developers to define variant kinds that enhance code clarity and efficiency.
 
 **Example:**
 ```nev
@@ -135,8 +135,8 @@ JsonNode :: Enum {
 ```
 
 #### **5. Case: Enhancing Readability and Optimization**
-**`Case`** can serve as function parameters, making the code more expressive and easier to read and some time much performance.
-- **Performance**: Functions that uses `Case` can be splited and optimized by compiler. So that'll offer high performance.
+**Case** can serve as function parameters, making the code more expressive and easier to read and some time much performance.
+- **Performance**: Functions that uses **Case** can be splited and optimized by compiler. So that'll offer high performance.
 - **Readable Code**: Using param as parameters increases code readability and intent, allowing for clearer function signatures.
 
 **Example:**
