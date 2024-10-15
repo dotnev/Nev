@@ -1,0 +1,13 @@
+match_number :: (n: I32)Str[0] {
+    back if n {
+        1 => "One",
+        2 => "Two",
+        3..10 => "Between three and ten",
+        _ => "Something else",
+    }
+}
+
+main :: {
+    number := 7
+    write(match_number(number)) // Outputs: Between three and ten
+}

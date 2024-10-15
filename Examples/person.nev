@@ -1,0 +1,33 @@
+Person :: Kind {
+  name: Str
+  age: U8
+
+  get_status :: Status {
+    back if age {
+      > 18 => Active
+      _ => Inactive
+    }
+  }
+}
+
+Status :: Enum {
+  Active
+  Inactive
+}
+
+
+check_people(people: [Person]) {
+  for p in people {
+    status := p.get_status
+    write("Person: $p.name is $status")
+  }
+}
+
+main :: {
+  people := [
+    Person { name: "Alice", age: 22 }
+    Person { name: "Bob", age: 16 }
+  ]
+
+  check_people(people)
+}

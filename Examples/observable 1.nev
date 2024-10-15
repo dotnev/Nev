@@ -1,17 +1,18 @@
-use nev:cli
+use cli {*}
+use observer {*}
 
 Window :: Kind {
-    mut size: Obs<Vector2> {
+    mut size: Obs[Vector2] {
         on_set << render 
     }
-    mut background: Obs<Color> {
+    mut background: Obs[Color] {
         on_set << {
           render()
-          cli.print("background changed")
+          write("background changed")
         }
     }
     render :: {
-        cli.print("a new frame rendered": line)
+        write("a new frame rendered": line)
     }
 }
 
@@ -19,6 +20,6 @@ main :: {
     win := Window {
         size = (600, 4008)
     }
-    win.size = (800, 600)  // This will automatically call render
+    win.size = (800, 600)  // This'll automatically call render
     win.background = "#ff5544" // This also
 }

@@ -1,31 +1,31 @@
-main :: () {
+main :: {
     
     // to declare a mutable variable
     mut name: dataType := DataType(value)
     mut name := value
     // for example
-    mut index := num(14235)
+    mut index := Num(14235)
     mut title = "Hello, world!"
 
     // to declare an immutable (u can spicify datatype)
-    name := "abdelrahman" // static size string
-    age := 255 // will save in smallest numeric data type possible to its value in that case u8
+    name := "abdelrahman" // static size string: Str[11]
+    age := 255 // will save in smallest numeric data type possible to its value in that case U8
     is_none := true // 1-bit
 
 
     // to declare nullable variable u should use option
     age := ?u8(24) // return option that compiler'll help u with
     mut name := Option("youssefully") // option type
+    neckname := ?"MrPixel" // write quastion mark dirctery before value
 
     /* data types
 
-    num
-    str
-    char
-    bool
-    i8 i16 i32 i64
-    u8 u16 u32 u64
-    f32 f64
+    Num
+    Str
+    Bool
+    I8 I16 I32 I64
+    U8 U16 U32 U64
+    F32 F64
 
     */
 

@@ -1,8 +1,7 @@
-use nev:cli
+use cli {*}
 
 main :: {
   areas := ['game', 'web', 'tools', 'science', 'systems', 'embedded', 'drivers', 'GUI', 'mobile']
-  for area in areas =>
-    cli.print("Hello, $area developers!": line)
+  areas.per => write("Hello, $it developers!": Line)
 }
 

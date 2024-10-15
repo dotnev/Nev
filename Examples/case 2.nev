@@ -12,12 +12,12 @@ TimeUnit :: Param(f32) {
 
 // That is a function use tagged variable(param) in parameters
 sleep :: (t: TimeUnit) {
-  end_time := time.now + t * when t {
-    is Second { 1000 }
-    is Minute { 60000 }
-    is Hour { 3600000 }
+  end_time := time.now + t * if t is {
+    Second { 1000 }
+    Minute { 60000 }
+    Hour { 3600000 }
   }
-  while time.now < end_time {}
+  for time.now < end_time {}
 }
 
 main :: {

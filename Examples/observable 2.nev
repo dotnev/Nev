@@ -1,9 +1,14 @@
-Window :: Kind {
-    mut size: Obs<Vector2>
-    mut background: Obs<Color>
+use {
+  cli {*}
+  observer {*}
+}
 
-    render :: () {
-        print("a new frame rendered": line)
+Window :: Kind {
+    mut size: Obs[Vector2]
+    mut background: Obs[Color]
+
+    render :: {
+        write("a new frame rendered": Line)
     }
 
     me :: {

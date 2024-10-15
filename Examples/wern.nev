@@ -1,7 +1,7 @@
 use cli {*}
 
 Wren :: Kind {
-  fly_to :: (city: str) => write("Flying to $city")
+  fly_to :: (city: Str) => write("Flying to $city")
 }
 
 main :: {
@@ -12,5 +12,5 @@ main :: {
 
   adj := Canal[Str[5]]
   go => adj << ["small", "clean", "fast"]
-  adj.iter(write(it))
+  adj.per(write(it))
 }

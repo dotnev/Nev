@@ -12,9 +12,10 @@ mut Player << collect :: (item: Item) {
 }
 
 MarioState :: Enum {
-  *Mario
-  *SuperMario
-  *FireMario
+  | Mario
+  | SuperMario
+  | FireMario
+  | Mario
 }
 
 Mario :: Kind {}

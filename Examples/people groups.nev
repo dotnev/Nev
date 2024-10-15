@@ -7,18 +7,18 @@ Person :: Kind { age: U32; name: Str[10] }
 
 main :: () {
   // Generate a list of random people
-  people := [Person: 30].iter
+  people := [Person: 30].per
     |> age(random.u32(1, 35))
-    |> name(random.text(10, { alpha = true }))
+    |> name(random.str(10, { english_alphabet = true }))
   
   // Sort them by age
-  people.sort(a.age > sort.age)
+  people.sort(a.age > b.age)
 
   // Group them by age
   grouped_people := people.group(a.age == b.age)
 
   // Output groups
-  grouped_people.iter
-    |> write("People of age ${it[0].age}:": Line)
-    |> it.iter(write("    ${it.nams}"): Line)
+  grouped_people.per
+    |> write("People of age ${_[0].age}:": Line)
+    |> per(write("    ${it.nams},": Line))
 }

@@ -14,8 +14,8 @@ hello_world_win := Window {
 </Window>
 
 
-hello_world_win :: Widnow() {
-  return Window {
+hello_world_win :: Widnow {
+  back Window {
     background = "#000",
     children = [
       Label { color = "#ff5544", text = "hello World", x_align = .center, y_align = .center }
@@ -23,8 +23,8 @@ hello_world_win :: Widnow() {
   }
 }
 
-hello_world_win :: Widnow() {
-  return <Window background="#000">
+hello_world_win :: Widnow {
+  back <Window background="#000">
     <Label color="#ff5544" text="hello World" x_align="center" y_align="center" />
   </Window>
 }

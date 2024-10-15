@@ -1,15 +1,19 @@
-use nev:cli
+use cli {*}
 
 
 // higher-order Closures... functions example
-run :: i32(v: i32, f: i32(i32)) => f(v)
+run :: (v: I32, f: (it: I32)I32)I32 => f(v) // u used it to make defualt id for argument
 
 main :: {
-    mut x := 50
+  mut x := 50
 
-    add_x :: (y: i32, x) => x + y
-    square :: (x: i32) => x ** 2
+  add_x :: (y: I32, x) => x + y
+  square :: (x: I32)I32 => x ^ 2
 
-    cli.write(add_x(run(5, square)))
-    // output: 75
+  write(add_x(run(5, it ^ 2)): Line)
+  write(add_x(run(5, square)): Line)
+  /* output:
+    75
+    75
+  */
 }
