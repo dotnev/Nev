@@ -1,44 +1,46 @@
-Vector2 :: Kind { mut x, y: i16 }
+Vector2 :: Kind { mut x, y: I16 }
 
 
-Block :: Typs {
-  Land,
-  Wall,
-  Water,
+Block :: Enum {
+  Land
+  Wall
+  Water
   Hole
 }
 
 Map :: Kind(size, startup_position, target: Vector2) {
-  players: [ptr[_ActivePlayer]] = []
+  players: [Ptr[_ActivePlayer]] = []
 
-  var world_blocks: [size.y][size.x]Block {
-    set _blocks -> {
-      if _blocks.len == size.y & _blocks[0].len == size.x ->
+  mut world_blocks: Ops[[[Block: size.x]: size.y]] {
+    set << _block {
+      if _blocks.len == size.y & _blocks[0].len == size.x =>
         world_blocks = _blocks
     }
   }
     
-  fun set_block: (position: Vector2, block: Block) ->
-    if position.y < size.y & position.x < size.x ->
+  set_block :: (position: Vector2, block: Block) {
+    if position.y < size.y & position.x < size.x {
       world_blocks[position.y][position.x] = block
+    }
+  }
 
-  fun show_in_window -> go {
+  show_in_window :: => go {
     // code render the map using raylib
   }
 }
 
-_ActivePlayer :: Kind{
-  init(val map: ptr<Map>) => map.players << me.ptr
+_ActivePlayer :: Kind {
+  @INIT :: (map: mut Map) => map.players << me.ptr
     
-  mut abilities = [Type { Fly, Sweam, SkipWalls }]
+  mut abilities = [Enum { Fly, Sweam, SkipWalls }]
   mut is_won = false
-  _memory: [[Type { Unknown, Poked, NotPosible }]]
+  _memory: [[Enum { Unknown, Poked, NotPosible }]]
   play_once :: {
     // algo code
   }
 },
 
-Player :: Type {
+Player :: Enum {
     Active: _ActivePlayer
     Idle
 }
